@@ -1,0 +1,4 @@
+// add initialisation of the pattern variables (declaration has been already done).
+
+// contains validator pack to namespace
+knownNamespaces = new HashMap<String,String>();

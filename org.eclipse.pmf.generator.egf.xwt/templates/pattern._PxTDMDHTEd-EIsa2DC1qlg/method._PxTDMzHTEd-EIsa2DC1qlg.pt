@@ -1,0 +1,18 @@
+Set<String> views = (Set<String>)ctx.getValue(Constants.VIEW_WITH_VALIDATOR);
+if (parameter.getDataBinding() != null && !parameter.getDataBinding().getValidators().isEmpty()) {
+    // quick hack to get the containing form
+    EObject eContainer = parameter.eContainer();
+    while (eContainer != null && !(eContainer instanceof DataForm)) {
+        eContainer = eContainer.eContainer();
+    }
+    if (eContainer instanceof DataForm) {
+        DataForm form = (DataForm) eContainer;
+        views.add(form.getName());
+    }
+} else if (parameter instanceof DataForm) {
+    DataForm form = (DataForm) parameter;
+    if (!((org.eclipse.pmf.pim.ElementalDataForm) form).getValidators().isEmpty())
+        views.add(form.getName().replaceAll("\\s+",""));
+}
+
+

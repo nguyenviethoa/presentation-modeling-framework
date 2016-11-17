@@ -1,0 +1,44 @@
+<%
+		String fullyClassName = (String) ctx.getValue(Constants.STRINGS_EXTERNAL);
+		String packageName = null;
+		String className = null;
+		if (fullyClassName.indexOf(".") == -1) {
+			className = fullyClassName;
+			packageName = (String) ctx.getValue(Constants.MODEL_PACKAGE);
+		}else{
+			packageName = fullyClassName.substring(0, fullyClassName.lastIndexOf("."));
+			className = fullyClassName.substring(fullyClassName.lastIndexOf(".") + 1);
+		}
+%>
+package <%=packageName%>;
+
+import org.eclipse.osgi.util.NLS;
+
+public class <%=className%> extends NLS {
+	private static final String BUNDLE_NAME = "<%=packageName%>.<%=className.toLowerCase()%>"; //$NON-NLS-1$
+	static {
+		// initialize resource bundle
+		NLS.initializeMessages(BUNDLE_NAME, <%=className%>.class);
+	}
+	
+	<%
+		Map<String, String> strings = (Map<String, String>) ctx.getValue(Constants.STRINGS_EXTERNAL_MAP);
+		if (strings != null){
+			String[] keys = strings.keySet().toArray(new String[0]);
+			Arrays.sort(keys);
+			for (String field : keys) {
+           /* field = field.replaceAll("'","");
+            */field = Normalizer.normalize(field, Normalizer.Form.NFD);
+            field = field.replaceAll("[^\\p{ASCII}]", "");
+            field = field.replaceAll("\\p{M}", "");
+			
+	%>
+	public static String <%=field.replaceAll("[^a-zA-Z_]", "").replaceAll("\\s+","")%>;
+	<%				
+			}
+		}
+	%>
+
+	private <%=className%>() {
+	}
+}

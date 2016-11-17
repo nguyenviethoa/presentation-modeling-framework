@@ -1,0 +1,37 @@
+<% 
+	 String classname = (String) ctx.getValue("dataformHandlerClass");
+	 String methodname = parameter.getName();
+	 StringBuffer content = new StringBuffer();
+	 
+	 if (ctx.getValue(classname) != null) {
+	 	 Set<String> methods = (Set<String>) ctx.getValue(classname);
+	 	 if (methods.contains(methodname))
+	 	 {
+	 	 	return;
+	 	 }
+	 	 else {
+	 	 	
+	 	 	content.append("	public void" + " " + methodname + "(Event event)" + "{" + NL);
+	 		content.append("		// Todo implement the handler action for the event" + NL + NL);
+	 		content.append("	}" + NL + NL);
+	 		
+	 		methods.add(methodname);
+	 		ctx.setValue(classname, methods);
+	 		}
+	 }
+	 else {
+	 	Set<String> methods = new HashSet<String>();
+	 	methods.add(methodname); 
+	 	ctx.setValue(classname, methods);
+	 	
+	 	
+	 		 	
+	 	content.append("	public void" + " " + methodname + "(Event event)" + "{" + NL);
+	 	content.append("		// Todo implement the handler action for the event" + NL + NL);
+	 	content.append("	}" + NL + NL);
+	 
+	 }
+	 
+	
+%>
+<%=content.toString()%>

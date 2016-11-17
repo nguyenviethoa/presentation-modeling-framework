@@ -1,0 +1,29 @@
+<%
+	if (dataItem.getLabel() != null) {
+		if (parameter == dataItem.getLabel()) {
+			label = parameter;
+		}
+	}	
+	if (dataItem.getHelp() != null) {
+		if (parameter == dataItem.getHelp()) {
+			help = parameter;
+		}
+	}
+	
+
+ 	String id = ((org.eclipse.pmf.pim.DataItem) ctx.getValue("container")).getResolvedTargetContextType().getRuntimeName();
+ 	String[] ns = XWTHelper.addNamespace(ctx, id);
+	String dataType = ((org.eclipse.pmf.pim.DataItem) ctx.getValue("container")).getResolvedTargetContextType().getName(); 
+
+//if the namespace already existed, get the ns and nsPrifix to use. Similarly for validators
+//	StringBuffer insertBuffer = new StringBuffer();
+//	insertBuffer.append("	xmlns:");
+//	insertBuffer.append(ns[1]);
+//	insertBuffer.append("=\"clr-namespace:");
+//	insertBuffer.append(ns[0]);
+//	insertBuffer.append("\"");
+//	insertBuffer.append("\n");
+//	EGFHelper.insertNode(ctx, "namespace", insertBuffer.toString());
+ %> 
+ 
+ <RadioGroupViewer singleSelection="{Binding path=<%=path%>}" input="{Binding source={x:Type <%=ns[1]%>:<%=dataType%>}}" 

@@ -1,0 +1,95 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	x:Class="org.eclipse.pmf.ui.properties.views.DataPropertyDataPropertyView"
+	x:name="DataProperty">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="mandatory" x:name="mandatory_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="mandatory">
+		<Button.selection>
+			<Binding path="mandatory" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATAPROPERTY_TYPE}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataTypeDataTypeView dataContext="{Binding path=type}">
+			<j:DataTypeDataTypeView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataTypeDataTypeView.layoutData>
+		</j:DataTypeDataTypeView>
+	</Group>
+	<Label text="type" x:name="type_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Label text="many" x:name="many_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="many">
+		<Button.selection>
+			<Binding path="many" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATAPROPERTY_GENERICTYPE}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:GenericTypeGenericTypeView
+			dataContext="{Binding path=genericType}">
+			<j:GenericTypeGenericTypeView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:GenericTypeGenericTypeView.layoutData>
+		</j:GenericTypeGenericTypeView>
+	</Group>
+	<Label text="genericType" x:name="genericType_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___DATAPROPERTY_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:PMFObjectPMFObjectView x:name="PMFObject">
+			<j:PMFObjectPMFObjectView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:PMFObjectPMFObjectView.layoutData>
+		</j:PMFObjectPMFObjectView>
+	</Composite>
+</Composite>

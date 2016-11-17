@@ -1,0 +1,250 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:b="clr-namespace:org.eclipse.pmf.pim.databinding" xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	xmlns:a="clr-namespace:org.eclipse.pmf.ui.properties.part"
+	x:Class="org.eclipse.pmf.ui.properties.views.DataBindingDataBindingView"
+	x:name="DataBinding">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATABINDING_TYPE}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataTypeDataTypeView dataContext="{Binding path=type}">
+			<j:DataTypeDataTypeView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataTypeDataTypeView.layoutData>
+		</j:DataTypeDataTypeView>
+	</Group>
+	<Label text="type" x:name="type_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATABINDING_PATH}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataBindingPathDataBindingPathView
+			dataContext="{Binding path=path}">
+			<j:DataBindingPathDataBindingPathView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataBindingPathDataBindingPathView.layoutData>
+		</j:DataBindingPathDataBindingPathView>
+	</Group>
+	<Label text="path *" x:name="path_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATABINDING_CONVERTER}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataConverterDataConverterView
+			dataContext="{Binding path=converter}">
+			<j:DataConverterDataConverterView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataConverterDataConverterView.layoutData>
+		</j:DataConverterDataConverterView>
+	</Group>
+	<Label text="converter" x:name="converter_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATABINDING_LOCALCONVERTER}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataConverterDataConverterView
+			dataContext="{Binding path=localConverter}">
+			<j:DataConverterDataConverterView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataConverterDataConverterView.layoutData>
+		</j:DataConverterDataConverterView>
+	</Group>
+	<Label text="localConverter" x:name="localConverter_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___DATABINDING_VALIDATORS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="validatorsViewer"
+			input="{Binding Path=validators}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addValidators"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeValidators"
+				enabled="{Binding ElementName=validatorsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpValidators"
+				enabled="{Binding ElementName=validatorsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownValidators"
+				enabled="{Binding ElementName=validatorsViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="validators" x:name="validators_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___DATABINDING_LOCALVALIDATORS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="localValidatorsViewer"
+			input="{Binding Path=localValidators}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addLocalValidators"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeLocalValidators"
+				enabled="{Binding ElementName=localValidatorsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpLocalValidators"
+				enabled="{Binding ElementName=localValidatorsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownLocalValidators"
+				enabled="{Binding ElementName=localValidatorsViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="localValidators" x:name="localValidators_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Label text="mode" x:name="mode_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<ComboViewer singleSelection="{Binding path=mode}"
+		input="{Binding source={x:Type b:BindingMode}}" x:name="mode">
+		<ComboViewer.contentProvider>
+			<ObservableListContentProvider />
+		</ComboViewer.contentProvider>
+		<ComboViewer.control.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</ComboViewer.control.layoutData>
+	</ComboViewer>
+	<Label text="updateSourceTrigger" x:name="updateSourceTrigger_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Text x:style="BORDER" x:name="updateSourceTrigger">
+		<Text.text>
+			<Binding path="updateSourceTrigger" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Text.text>
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Text.layoutData>
+	</Text>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATABINDING_NULL}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:nullBindingStatusView dataContext="{Binding path=null}">
+			<j:nullBindingStatusView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:nullBindingStatusView.layoutData>
+		</j:nullBindingStatusView>
+	</Group>
+	<Label text="bindingStatus" x:name="bindingStatus_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+</Composite>

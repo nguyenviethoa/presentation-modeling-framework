@@ -1,0 +1,32 @@
+<Setter 
+
+<%
+if (parameter.getProperty() != null) {
+
+%>
+
+targetName="<%=parameter.getProperty()%>" 
+
+<% } %>
+
+<%
+
+if (parameter.getValue() != null) {
+
+%>
+
+Value="<%=parameter.getValue()%>" 
+
+<% } %>
+
+<%
+
+if (parameter.getTarget() != null) {
+
+%>
+
+targetName="<%=parameter.getTarget().getName()%>" 
+
+<% } %>
+
+/>

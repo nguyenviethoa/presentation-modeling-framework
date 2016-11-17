@@ -1,0 +1,10 @@
+<% org.eclipse.pmf.pim.interactive.DataPredicate dataPredicate = (org.eclipse.pmf.pim.interactive.DataPredicate) parameter;%>
+
+<%	
+	Boolean isMultiTrigger = (Boolean) ctx.getValue("isMultiTrigger");
+	if (isMultiTrigger)  {
+%>
+<Condition 
+<%} %>
+
+Binding="{Binding Path=<%=org.eclipse.pmf.pim.util.DataBindingUtil.getPath(dataPredicate.getBinding())%>}" 

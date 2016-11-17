@@ -1,0 +1,29 @@
+<%
+	String groupText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, parameter, parameter.getName());
+	List<DataProperty> columns = parameter.getColumns();
+%>
+
+<% // call from parent pattern 's begin UI method %>
+		
+	<%
+		
+		boolean hasColumns = false;
+		if (variable instanceof org.eclipse.pmf.pim.DataForm ){
+			org.eclipse.emf.common.util.EList<org.eclipse.pmf.pim.DataItem> children = ((org.eclipse.pmf.pim.ElementalDataForm) variable).getChildren();
+			for (org.eclipse.pmf.pim.DataItem dataItem : children) {
+				if (dataItem instanceof org.eclipse.pmf.pim.DataField){
+					hasColumns = true;
+					break;
+				}
+			}
+		}
+		
+			if(hasColumns){	%>
+			<TableViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="<%=parameter.getName()%>Viewer" input="{Binding Path=<%=DataBindingUtil.getPath(parameter.getDataBinding())%>}">
+			<TableViewer.columns>
+			<%}else {%>
+			<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="<%=parameter.getName()%>Viewer" input="{Binding Path=<%=DataBindingUtil.getPath(parameter.getDataBinding())%>}">
+<%
+}
+%>
+

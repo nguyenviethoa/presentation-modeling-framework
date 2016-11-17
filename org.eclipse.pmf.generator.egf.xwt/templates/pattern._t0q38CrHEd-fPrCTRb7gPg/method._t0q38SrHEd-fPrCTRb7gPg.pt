@@ -1,0 +1,25 @@
+package application.views.java;
+
+import java.util.*;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+import org.eclipse.egf.common.helper.*;
+import org.eclipse.pmf.emf.*;
+import org.eclipse.jdt.core.dom.*;
+import org.eclipse.jface.text.*;
+import org.eclipse.core.runtime.*;
+import org.eclipse.pmf.generator.egf.xwt.*;
+import org.eclipse.core.resources.*;
+import org.eclipse.text.edits.TextEdit;
+import org.eclipse.pmf.generator.egf.xwt.*;
+
+
+public class SetupDataInput {
+
+	public SetupDataInput() {
+		//Here is the constructor
+	}
+
+

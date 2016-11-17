@@ -1,0 +1,59 @@
+<% 
+	String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE); 
+	String NL = System.getProperties().getProperty("line.separator");
+	String classFullname = parameter.getName();
+	 if (classFullname == null){
+		 return;
+	 }
+	
+	 classname = "";
+	 String methodname = "";
+	 int lastIndex = classFullname.lastIndexOf(".");
+	 if (lastIndex != -1) {
+		 classname = classFullname.substring(0, lastIndex);
+		 methodname = classFullname.substring(lastIndex + 1, classFullname.length());
+	 } 
+	 else {
+		 return;
+	 }
+	 
+	 if (ctx.getValue(classname) != null) {
+	 	 Set<String> methods = (Set<String>) ctx.getValue(classname);
+	 	 if (methods.contains(methodname))
+	 	 {
+	 	 	return;
+	 	 }
+	 	 else {
+	 	 	StringBuffer content = (StringBuffer) ctx.getValue(classname + "content");
+	 	 	content.append("	public void" + " " + methodname + "(Event event)" + "{" + NL);
+	 		content.append("		// Todo implement the handler action for the event" + NL + NL);
+	 		content.append("	}" + NL + NL);
+	 		
+	 		ctx.setValue(classname + "content", content);
+	 	 }	
+	 
+	 }
+	 else {
+	 	Set<String> methods = new HashSet<String>();
+	 	methods.add(methodname);
+	 	ctx.setValue(classname, methods);
+	 	
+	 	StringBuffer content = new StringBuffer();
+	 	content.append("package" + " " + _package + ";" + NL + NL);
+	 	content.append("import org.eclipse.swt.widgets.*;" + NL + NL);
+	 	content.append("/**" + NL);
+	 	content.append(" *" + NL);
+	 	content.append(" *" + "@author" + NL);
+	 	content.append(" */" + NL);
+	 	content.append("public class" + " " + classname + "{" + NL);
+	 	
+	 	content.append("	public void" + " " + methodname + "(Event event)" + "{" + NL);
+	 	content.append("		// Todo implement the handler action for the event" + NL + NL);
+	 	content.append("	}" + NL + NL);
+	 	
+	 	ctx.setValue(classname + "content", content);
+	 }
+	 String generatedString = ((StringBuffer) ctx.getValue(classname + "content")).toString();
+	
+%>
+<%=generatedString%>

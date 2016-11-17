@@ -1,0 +1,19 @@
+ 	    <%
+    EList<Validator> dataFieldValidators = ((org.eclipse.pmf.pim.DataItem) ctx.getValue("container")).getDataBinding().getValidators();
+
+   	//assign the mandatory field validator automatically if "mandatory" property is true
+	org.eclipse.pmf.pim.Application application = (org.eclipse.pmf.pim.Application) ctx.getValue(Constants.APPLICATION);
+	if (dataItem.isMandatory()) {
+       dataFieldValidators.add(application.getMandatoryField());
+	   }
+	   
+	// add TooltTip to display validation status
+	if (dataFieldValidators != null && !dataFieldValidators.isEmpty())
+	{
+    %>
+      toolTipText="{Binding source={StaticResource myDBC}, path=status}" 
+    <% 
+      }
+    %>
+     
+ >

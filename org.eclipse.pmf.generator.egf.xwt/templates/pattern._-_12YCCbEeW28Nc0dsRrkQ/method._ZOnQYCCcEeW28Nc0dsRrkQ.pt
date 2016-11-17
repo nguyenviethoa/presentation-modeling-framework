@@ -1,0 +1,44 @@
+<%
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE);
+String pageName = parameter.getName();
+String dataForm = parameter.getContent().getName();
+String dataType = parameter.getContent().getDataContextType().getName();
+  
+String modelPackage = (String)ctx.getValue("model.package.name");
+String nsPrefix = XWTHelper.addNamespace(ctx, modelPackage + ".*")[1];
+
+ctx.setValue("container", parameter);
+%>
+
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" 
+	xmlns:<%=nsPrefix%>="clr-namespace:<%=_package%>" 
+	x:Class="<%=_package%>.<%=parameter.getName()+parameter.getContent().getName()%>View"
+	Name="<%=pageName+dataForm%>">
+	
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+
+	<<%=nsPrefix%>:<%=dataType+dataForm%>View Name="<%=dataType+dataForm%>View">
+		<<%=nsPrefix%>:<%=dataType+dataForm%>View.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true"/>
+		</<%=nsPrefix%>:<%=dataType+dataForm%>View.layoutData>
+	</<%=nsPrefix%>:<%=dataType+dataForm%>View>
+	
+	<%
+	if (parameter.isTransactionEdition()){		
+	%>
+	<Button Name="ButtonValidate" Text="Validate" SelectionEvent="validate">
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.CENTER" />
+		</Button.layoutData>
+	</Button>
+	
+	<%
+	}
+	%>
+
+
+	

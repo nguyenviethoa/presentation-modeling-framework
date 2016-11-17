@@ -1,0 +1,3 @@
+<%
+ ctx.setValue("container", parameter);
+%>

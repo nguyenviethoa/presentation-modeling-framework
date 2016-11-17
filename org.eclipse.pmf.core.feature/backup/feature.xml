@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.pmf.core.feature"
+      label="PMF core"
+      version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.eclipse.egf"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.common"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.common.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.common.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.common.ui.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.core"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.core.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.core.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.core.ui.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.doc"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.edit"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.edit.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.fprod"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.fprod.edit"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.fprod.edit.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.fprod.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.ftask"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.ftask.edit"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.ftask.edit.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.ftask.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.model.ui.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.emf"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.emf.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.genchain"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.genchain.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.task.ant"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.portfolio.task.ant.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.producer"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.producer.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.producer.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.producer.ui.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.egf.sdk"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.xwt.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.xwt.workbench.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.epf.common.html.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.epf.richtext.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.epf.richtext.feature.nls1"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.epf.richtext.feature.nls2"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.epf.richtext.feature.nls2a"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.epf.richtext.feature.nlsBidi"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.pmf.model.checkrules"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.pim"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.pim.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.tools"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.ui.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.ui.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.ui.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.pmf.ui.tools"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula.widgets.datechooser"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula.widgets.formattedtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.epf.richtext.extension"
+         download-size="0"
+         install-size="0"
+         version="0.0.0.qualifier"/>
+
+</feature>

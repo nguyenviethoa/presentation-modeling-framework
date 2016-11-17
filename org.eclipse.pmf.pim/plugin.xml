@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+# *****************************************************************************
+# Copyright (c) 2006, 2016 Soyatec (http://www.soyatec.com) and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+# 
+# Contributors:
+#     Soyatec - initial API and implementation
+#******************************************************************************
+ </copyright>
+
+ $Id: plugin.xml,v 1.4 2010/11/13 14:58:55 yvyang Exp $
+-->
+<plugin>
+   <extension-point id="extensionpoint.uimode" name="UIMode" schema="schema/org.eclipse.pmf.extensionpoint.uimode.exsd"/>
+   <extension-point id="extensionpoint.wizardCategory" name="wizardCategory" schema="schema/wizardCategory.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.eclipse.pmf.emf.PEMFPackage" genModel="model/emf.genmodel" uri="http://www.eclipse.org/pmf/emf"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.eclipse.pmf.pim.PMFPackage" genModel="model/pmf.genmodel" uri="http://www.eclipse.org/pmf"/>
+   </extension>
+   
+      <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.eclipse.pmf.pim.ui.UiPackage" genModel="model/pmf.genmodel" uri="http://www.eclipse.org/pmf/ui"/>
+   </extension>
+   
+      <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.eclipse.pmf.pim.metamodel.MetamodelPackage" genModel="model/pmf.genmodel" uri="http://www.eclipse.org/pmf/metamodel"/>
+   </extension>   
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.eclipse.pmf.pim.interactive.InteractivePackage" genModel="model/emf.genmodel" uri="http://www.eclipse.org/pmf/interactive"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pmf -->
+      <package
+            uri="http://www.eclipse.org/pmf/datainput"
+            class="org.eclipse.pmf.pim.datainput.DatainputPackage"
+            genModel="model/pmf.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pmf -->
+      <package
+            uri="http://www.eclipse.org/pmf/databinding"
+            class="org.eclipse.pmf.pim.databinding.DatabindingPackage"
+            genModel="model/pmf.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pmf -->
+      <package
+            uri="http://www.eclipse.org/pmf/transformation"
+            class="org.eclipse.pmf.pim.transformation.TransformationPackage"
+            genModel="model/pmf.genmodel"/>
+   </extension>
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.eclipse.pmf.pim.data.DataPackage" genModel="model/emf.genmodel" uri="http://www.eclipse.org/pmf/data"/>
+   </extension>   
+</plugin>

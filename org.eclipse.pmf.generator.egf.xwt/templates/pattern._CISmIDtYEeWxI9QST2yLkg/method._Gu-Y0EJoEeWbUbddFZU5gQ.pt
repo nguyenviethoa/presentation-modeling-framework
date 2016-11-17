@@ -1,0 +1,9 @@
+
+		<RadioGroupViewer.contentProvider>
+			<ObservableListContentProvider/>
+		</RadioGroupViewer.contentProvider>
+		<RadioGroupViewer.control.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</RadioGroupViewer.control.layoutData>
+</RadioGroupViewer>

@@ -1,0 +1,79 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views" xmlns:a="clr-namespace:org.eclipse.pmf.ui.properties.part"
+	x:Class="org.eclipse.pmf.ui.properties.views.CodeGenContextCodeGenContextView"
+	x:name="CodeGenContext">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___CODEGENCONTEXT_RESOURCERESOLVERS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="resourceResolversViewer"
+			input="{Binding Path=resourceResolvers}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addResourceResolvers"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeResourceResolvers"
+				enabled="{Binding ElementName=resourceResolversViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpResourceResolvers"
+				enabled="{Binding ElementName=resourceResolversViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownResourceResolvers"
+				enabled="{Binding ElementName=resourceResolversViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="resourceResolvers" x:name="resourceResolvers_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___CODEGENCONTEXT_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:ResourceResolverResourceResolverView
+			x:name="ResourceResolver">
+			<j:ResourceResolverResourceResolverView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:ResourceResolverResourceResolverView.layoutData>
+		</j:ResourceResolverResourceResolverView>
+	</Composite>
+</Composite>

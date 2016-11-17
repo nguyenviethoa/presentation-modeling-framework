@@ -1,0 +1,5 @@
+<%
+String projectId = parameter.getName();
+IPath path = new Path(projectId).append("META-INF").append("MANIFEST.MF");
+ctx.setValue(Constants.TARGET_FILE, path);  
+%>

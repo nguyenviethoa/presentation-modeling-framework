@@ -1,0 +1,79 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views" x:Class="org.eclipse.pmf.ui.properties.views.SetActionSetActionView"
+	x:name="SetAction">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="value" x:name="value_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Text x:style="BORDER" x:name="value">
+		<Text.text>
+			<Binding path="value" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Text.text>
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Text.layoutData>
+	</Text>
+	<Group text="{x:Static m:Messages.PROPERTIES___SETACTION_TARGET}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:UIObjectUIObjectView dataContext="{Binding path=target}">
+			<j:UIObjectUIObjectView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:UIObjectUIObjectView.layoutData>
+		</j:UIObjectUIObjectView>
+	</Group>
+	<Label text="target" x:name="target_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___SETACTION_PROPERTY}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:PropertyPropertyView dataContext="{Binding path=property}">
+			<j:PropertyPropertyView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:PropertyPropertyView.layoutData>
+		</j:PropertyPropertyView>
+	</Group>
+	<Label text="property" x:name="property_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___SETACTION_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:TriggerActionTriggerActionView
+			x:name="TriggerAction">
+			<j:TriggerActionTriggerActionView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:TriggerActionTriggerActionView.layoutData>
+		</j:TriggerActionTriggerActionView>
+	</Composite>
+</Composite>

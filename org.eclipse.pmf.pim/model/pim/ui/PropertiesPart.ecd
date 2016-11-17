@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="PropertiesPart" size="976,395" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui" metadata="emf-1.0" initialized="true" tag="100" key="32303037303533312D313030206F72672E65636C697073652E706D662E70696D">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="PropertyTab" location="344,180" size="119,29" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/PropertyTab" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="content" location="88,57" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/PropertyTab/content" multiplicityLabel="//@children.0/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.0/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="378,123" size="18,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="content" location="410,123" size="36,14" anchorKind="LastPart"/>
+        <model href="../../pmf.ecore#//ui/PropertyTab/content"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,0" attachSource="true"/>
+    </sourceConnections>
+    <model href="../../pmf.ecore#//ui/PropertyTab"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PropertiesPart" location="105,180" size="133,29" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/PropertiesPart" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="tabs" location="0,14" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/PropertiesPart/tabs" multiplicityLabel="//@children.1/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.1/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="333,201" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="tabs" location="316,173" size="21,14" anchorKind="LastPart"/>
+        <model href="../../pmf.ecore#//ui/PropertiesPart/tabs"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="133,14" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.1/@children.1" sourceEnd="//@children.1/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="55,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="33,29"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.2/@children.1" sourceEnd="//@children.1/@sourceConnections.2/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dataType" location="84,0" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/PropertiesPart/dataType" multiplicityLabel="//@children.1/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.1/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="dataType" location="178,279" size="44,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="158,279" size="6,14" anchorKind="LastPart"/>
+        <model href="../../pmf.ecore#//ui/PropertiesPart/dataType"/>
+      </children>
+    </sourceConnections>
+    <model href="../../pmf.ecore#//ui/PropertiesPart"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="Part" location="127,73" size="68,29" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/Part" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../pmf.ecore#//ui/Part"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.2" name="DataType" location="87,300" size="169,75" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType" runTimeClassModel="abstract,primitive">
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="abstract" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType/abstract">
+        <model href="../../pmf.ecore#//data/DataType/abstract"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="primitive" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType/primitive">
+        <model href="../../pmf.ecore#//data/DataType/primitive"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../pmf.ecore#//data/DataType"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="DataForm" location="315,59" size="178,57" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//DataForm" runTimeClassModel="transactionEdition">
+    <children xsi:type="editmodel:CompartmentEditModel" size="155,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="transactionEdition" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//DataForm/transactionEdition">
+        <model href="../../pmf.ecore#//DataForm/transactionEdition"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../pmf.ecore#//DataForm"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="../../pmf.ecore#//ui"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="open=platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//ui/PropertiesPart;wireOptions=2;Product=eEmf"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

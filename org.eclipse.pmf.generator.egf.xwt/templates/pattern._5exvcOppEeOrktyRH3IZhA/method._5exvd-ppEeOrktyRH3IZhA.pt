@@ -1,0 +1,4 @@
+<%
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE);
+String project = (String)ctx.getValue(Constants.GENERATED_PROJECT);
+%>

@@ -1,0 +1,11 @@
+@SuppressWarnings("unchecked")
+Map<String, String> validators = (Map<String, String>)ctx.getValue(Constants.VALIDATORS);
+
+org.eclipse.pmf.pim.transformation.CodeGenContext codegen = (org.eclipse.pmf.pim.transformation.CodeGenContext) ctx
+				.getValue("codegen.context");
+if (codegen != null) {
+	String fullClassName = codegen.getValidator(parameter.getId());
+	if (fullClassName != null) {
+		validators.put(parameter.getId(), fullClassName);
+	}
+}

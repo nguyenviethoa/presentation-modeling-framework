@@ -1,0 +1,396 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views" xmlns:a="clr-namespace:org.eclipse.pmf.ui.properties.part"
+	x:Class="org.eclipse.pmf.ui.properties.views.LibraryLibraryView"
+	x:name="Library">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_VIEWPROFILES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="viewProfilesViewer"
+			input="{Binding Path=viewProfiles}">
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addViewProfiles"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeViewProfiles"
+				enabled="{Binding ElementName=viewProfilesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpViewProfiles"
+				enabled="{Binding ElementName=viewProfilesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownViewProfiles"
+				enabled="{Binding ElementName=viewProfilesViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="viewProfiles" x:name="viewProfiles_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_SYSTEMACTIONS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="systemActionsViewer"
+			input="{Binding Path=systemActions}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addSystemActions"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeSystemActions"
+				enabled="{Binding ElementName=systemActionsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpSystemActions"
+				enabled="{Binding ElementName=systemActionsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownSystemActions"
+				enabled="{Binding ElementName=systemActionsViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="systemActions" x:name="systemActions_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_COMMANDS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="commandsViewer"
+			input="{Binding Path=commands}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addCommands"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeCommands"
+				enabled="{Binding ElementName=commandsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpCommands"
+				enabled="{Binding ElementName=commandsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownCommands"
+				enabled="{Binding ElementName=commandsViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="commands" x:name="commands_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_CONVERTERS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="convertersViewer"
+			input="{Binding Path=converters}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addConverters"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeConverters"
+				enabled="{Binding ElementName=convertersViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpConverters"
+				enabled="{Binding ElementName=convertersViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownConverters"
+				enabled="{Binding ElementName=convertersViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="converters" x:name="converters_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_VALIDATORS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="validatorsViewer"
+			input="{Binding Path=validators}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addValidators"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeValidators"
+				enabled="{Binding ElementName=validatorsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpValidators"
+				enabled="{Binding ElementName=validatorsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownValidators"
+				enabled="{Binding ElementName=validatorsViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="validators" x:name="validators_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_TYPES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<TableViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="typesViewer"
+			input="{Binding Path=types}">
+			<TableViewer.columns>
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATATYPE_ABSTRACT}"
+					bindingPath="abstract" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATATYPE_PRIMITIVE}"
+					bindingPath="primitive" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATATYPE_ENUM}"
+					bindingPath="enum" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+					bindingPath="name" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+					bindingPath="description" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			</TableViewer.columns>
+			<TableViewer.table HeaderVisible="true" />
+			<TableViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</TableViewer.control.layoutData>
+		</TableViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addTypes"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeTypes"
+				enabled="{Binding ElementName=typesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpTypes"
+				enabled="{Binding ElementName=typesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownTypes"
+				enabled="{Binding ElementName=typesViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="types" x:name="types_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_IMAGES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="imagesViewer"
+			input="{Binding Path=images}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addImages"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeImages"
+				enabled="{Binding ElementName=imagesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpImages"
+				enabled="{Binding ElementName=imagesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownImages"
+				enabled="{Binding ElementName=imagesViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="images" x:name="images_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LIBRARY_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:PMFObjectPMFObjectView x:name="PMFObject">
+			<j:PMFObjectPMFObjectView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:PMFObjectPMFObjectView.layoutData>
+		</j:PMFObjectPMFObjectView>
+	</Composite>
+</Composite>

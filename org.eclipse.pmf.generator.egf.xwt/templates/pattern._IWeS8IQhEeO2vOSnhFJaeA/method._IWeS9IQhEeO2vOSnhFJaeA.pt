@@ -1,0 +1,14 @@
+<%
+	if (dataItem.getLabel() != null) {
+		if (parameter == dataItem.getLabel()) {
+			label = parameter;
+		}
+	}	
+	if (dataItem.getHelp() != null) {
+		if (parameter == dataItem.getHelp()) {
+			help = parameter;
+		}
+	}
+	
+%>
+<Button x:Style="CHECK" 

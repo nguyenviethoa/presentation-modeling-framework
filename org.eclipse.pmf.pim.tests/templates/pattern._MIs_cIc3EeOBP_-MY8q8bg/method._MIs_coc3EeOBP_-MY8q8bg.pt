@@ -1,0 +1,34 @@
+package application;
+
+import java.util.*;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+import org.eclipse.egf.common.helper.*;
+import org.eclipse.core.resources.*;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.egf.core.producer.InvocationException;
+import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
+import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
+import org.eclipse.jdt.core.IClasspathEntry;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.pde.internal.core.ClasspathComputer;
+import org.eclipse.pde.internal.core.util.CoreUtility;
+import org.eclipse.pmf.generator.egf.xwt.*;
+import org.eclipse.pde.internal.core.natures.PDE;
+import org.eclipse.core.runtime.*;
+
+
+public class CreateProject {
+
+	public CreateProject() {
+		//Here is the constructor
+	}
+
+

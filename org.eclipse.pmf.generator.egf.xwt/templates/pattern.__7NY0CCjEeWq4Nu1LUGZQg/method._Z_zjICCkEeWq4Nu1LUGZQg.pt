@@ -1,0 +1,54 @@
+<% 
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE); 
+
+String pageName = parameter.getName();
+
+String dataFormPageName=parameter.getContent().getName();
+String className = pageName+dataFormPageName+"View";
+
+DataForm dataFormPage=parameter.getContent();
+String dataFormDataTypeName=dataFormPage.getDataContextType().getName();
+
+ctx.setValue("pageHandlerClass", className);
+
+%>
+ /******************************************************************************* 
+ * Copyright (c) 2006, 2016 Soyatec (http://www.soyatec.com) and others. 
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html 
+ * 
+ * Contributors: 
+ * Soyatec - initial API and implementation 
+ *******************************************************************************/ 
+ 
+package <%=_package%>;
+
+import java.net.URL;
+import java.util.Map.Entry;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.xwt.ResourceDictionary;
+import org.eclipse.xwt.XWT;
+import org.eclipse.xwt.databinding.BindingContext;
+import org.eclipse.xwt.databinding.IBindingContext;
+
+
+/**
+ * @author El-Amine Ouraiba (amine.ouraiba@soyatec.com)
+
+ */
+public class <%=className%> extends AbstractView {
+
+  public <%=className%> (Composite parent, int style) {
+		super (parent, style);
+	}
+
+

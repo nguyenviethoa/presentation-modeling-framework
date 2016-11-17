@@ -1,0 +1,14 @@
+<%
+	DataItem dataItem = (DataItem) ctx.getValue("container");
+	String name = (String) dataItem.getName();
+	if (parameter.getName() != null)
+		name= parameter.getName();
+	else 
+		name = name + "_help";	
+
+	String url = "";
+	url = parameter.getUrl();
+%>      <Link 
+		x:name = "<%=name%>" text="<%=url%>"></Link>
+
+

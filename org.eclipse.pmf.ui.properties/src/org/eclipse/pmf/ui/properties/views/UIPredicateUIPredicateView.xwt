@@ -1,0 +1,65 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	x:Class="org.eclipse.pmf.ui.properties.views.UIPredicateUIPredicateView"
+	x:name="UIPredicate">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Group text="{x:Static m:Messages.PROPERTIES___UIPREDICATE_SOURCE}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:UIObjectUIObjectView dataContext="{Binding path=source}">
+			<j:UIObjectUIObjectView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:UIObjectUIObjectView.layoutData>
+		</j:UIObjectUIObjectView>
+	</Group>
+	<Label text="source" x:name="source_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___UIPREDICATE_PROPERTY}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:PropertyPropertyView dataContext="{Binding path=property}">
+			<j:PropertyPropertyView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:PropertyPropertyView.layoutData>
+		</j:PropertyPropertyView>
+	</Group>
+	<Label text="property" x:name="property_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___UIPREDICATE_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:LogicPredicateLogicPredicateView
+			x:name="LogicPredicate">
+			<j:LogicPredicateLogicPredicateView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:LogicPredicateLogicPredicateView.layoutData>
+		</j:LogicPredicateLogicPredicateView>
+	</Composite>
+</Composite>

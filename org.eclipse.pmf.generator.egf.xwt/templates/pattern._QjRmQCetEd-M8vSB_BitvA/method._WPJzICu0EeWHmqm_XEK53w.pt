@@ -1,0 +1,8 @@
+<% if (parameter.getTriggers() != null && !parameter.getTriggers().isEmpty()){ %>
+	</Composite.Triggers>
+
+<%
+
+}
+
+%>

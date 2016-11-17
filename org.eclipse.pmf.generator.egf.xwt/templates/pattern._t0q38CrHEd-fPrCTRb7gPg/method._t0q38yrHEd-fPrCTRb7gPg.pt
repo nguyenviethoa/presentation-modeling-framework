@@ -1,0 +1,116 @@
+String formName = parameter.getDataForm().getName();
+EMFFileInput input = (EMFFileInput)parameter.getDataInput();
+
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE);
+String project = (String)ctx.getValue(Constants.GENERATED_PROJECT);
+IPath path = new Path(project).append(Constants.DEFAULT_SOURCE_FOLDER);
+String[] paths = _package.split("\\.");
+for (String segment : paths)
+	path = path.append(segment);
+path = path.append(formName+"View").addFileExtension("java");
+IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+byte[] templatecontent = org.eclipse.egf.common.helper.FileHelper.readFile(file.getContents());
+		//use ast to add a getDatacontext() to read the input file
+
+			Document document = new Document(new String(templatecontent));
+            ASTParser parser = ASTParser.newParser(AST.JLS3);
+            parser.setKind(ASTParser.K_COMPILATION_UNIT);
+            parser.setSource(document.get().toCharArray());
+            CompilationUnit cu = (CompilationUnit) parser.createAST(null);
+            cu.recordModifications();
+            if ((cu.getFlags() & ASTNode.MALFORMED) == 0) {
+                TypeDeclaration type = (TypeDeclaration) cu.types().get(0);
+                AST ast = type.getAST();
+                
+                
+                // imports
+                ImportDeclaration newImportDeclaration = ast.newImportDeclaration();
+                newImportDeclaration.setName(ast.newName("org.eclipse.emf.common.util.URI"));
+                cu.imports().add(newImportDeclaration);
+                newImportDeclaration = ast.newImportDeclaration();
+                newImportDeclaration.setName(ast.newName("org.eclipse.emf.ecore.resource.Resource"));
+                cu.imports().add(newImportDeclaration);
+                newImportDeclaration = ast.newImportDeclaration();
+                newImportDeclaration.setName(ast.newName("org.eclipse.emf.ecore.resource.impl.ResourceSetImpl"));
+                cu.imports().add(newImportDeclaration);
+                newImportDeclaration = ast.newImportDeclaration();
+                newImportDeclaration.setName(ast.newName("org.eclipse.e4.xwt.ui.workbench.views.XWTStaticPart"));
+                cu.imports().add(newImportDeclaration);
+
+                //set up parent
+                SimpleType newSimpleType = ast.newSimpleType(ast.newName("XWTStaticPart"));
+                type.setSuperclassType(newSimpleType);
+                type.bodyDeclarations().clear();
+
+                // 2 - add setter methods
+                MethodDeclaration method = ast.newMethodDeclaration();
+                method.modifiers().addAll(ast.newModifiers(Modifier.PUBLIC));
+                method.setName(ast.newSimpleName("getDataContext"));
+                method.setReturnType2(ast.newSimpleType(ast.newName("java.lang.Object")));
+    
+                Block body = ast.newBlock();
+    
+                // create uri
+                VariableDeclarationFragment uriVariableFragment = ast.newVariableDeclarationFragment();
+                uriVariableFragment.setName(ast.newSimpleName("uri"));
+                MethodInvocation methodInvocation = ast.newMethodInvocation();
+                methodInvocation.setName(ast.newSimpleName("createPlatformPluginURI"));
+                methodInvocation.setExpression(ast.newSimpleName("URI"));
+                StringLiteral newStringLiteral = ast.newStringLiteral();
+                newStringLiteral.setEscapedValue("\""+project+"/"+input.getFileName()+"\"");
+                methodInvocation.arguments().add(newStringLiteral);
+                methodInvocation.arguments().add(ast.newBooleanLiteral(false));
+    
+                uriVariableFragment.setInitializer(methodInvocation);
+                VariableDeclarationStatement uriVariable = ast.newVariableDeclarationStatement(uriVariableFragment);
+                uriVariable.setType(ast.newSimpleType(ast.newName("URI")));
+    
+                body.statements().add(uriVariable);
+    
+                // create resource
+                VariableDeclarationFragment resVariableFragment = ast.newVariableDeclarationFragment();
+                resVariableFragment.setName(ast.newSimpleName("res"));
+                methodInvocation = ast.newMethodInvocation();
+                methodInvocation.setName(ast.newSimpleName("getResource"));
+                methodInvocation.arguments().add(ast.newSimpleName("uri"));
+                methodInvocation.arguments().add(ast.newBooleanLiteral(true));
+    
+                ClassInstanceCreation classInstanceCreation = ast.newClassInstanceCreation();
+                classInstanceCreation.setType(ast.newSimpleType(ast.newName("ResourceSetImpl")));
+                methodInvocation.setExpression(classInstanceCreation);
+                resVariableFragment.setInitializer(methodInvocation);
+                VariableDeclarationStatement resVariable = ast.newVariableDeclarationStatement(resVariableFragment);
+                resVariable.setType(ast.newSimpleType(ast.newName("Resource")));
+                body.statements().add(resVariable);
+    
+                // return statement
+                ReturnStatement returnStatement = ast.newReturnStatement();
+                methodInvocation = ast.newMethodInvocation();
+                methodInvocation.setName(ast.newSimpleName("get"));
+                methodInvocation.arguments().add(ast.newNumberLiteral("0"));
+    
+                MethodInvocation methodInvocation1 = ast.newMethodInvocation();
+                methodInvocation1.setName(ast.newSimpleName("getContents"));
+                methodInvocation1.setExpression(ast.newSimpleName("res"));
+    
+                methodInvocation.setExpression(methodInvocation1);
+                returnStatement.setExpression(methodInvocation);
+    
+                body.statements().add(returnStatement);
+                
+                
+//                body.statements().add(ast.newExpressionStatement(assignment));
+                method.setBody(body);
+                type.bodyDeclarations().add(method);
+                
+                TextEdit rewrite = cu.rewrite(document, null);
+                try {
+                    rewrite.apply(document);
+                } catch (BadLocationException e1) {
+                    throw new PatternException(e1);
+                }
+                templatecontent = document.get().getBytes();
+
+				java.io.ByteArrayInputStream inputStream = new java.io.ByteArrayInputStream(templatecontent);
+				file.setContents(inputStream, true, true, null);
+			}

@@ -1,0 +1,9 @@
+<% 
+		 
+	org.eclipse.pmf.pim.ui.UIEvent event = parameter.getEvent();
+	String eventName = event.getName();
+	abstractTrigger = parameter;
+	
+%>
+
+<EventTrigger RoutedEvent="<%=eventName%>">

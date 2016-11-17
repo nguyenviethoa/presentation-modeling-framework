@@ -1,0 +1,13 @@
+<%
+List wizardPages = parameter.getWizardPages();
+%>
+     public void addPages() {
+	  <%
+	  for(WizardPage page : parameter.getWizardPages()){
+		  %>
+	    <%=page.getName()%> = new <%=page.getName()%>WizardPage("<%=page.getName()%>", "Enter information about <%=page.getDataContextType().getName()%>", null, <%=page.getDataContextType().getName()%>_dataContext);   
+	    addPage(<%=page.getName()%>);
+	  <%
+	  }
+	  %>
+}

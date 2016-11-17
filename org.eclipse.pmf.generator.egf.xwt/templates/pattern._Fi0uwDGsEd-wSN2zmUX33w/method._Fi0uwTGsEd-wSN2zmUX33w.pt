@@ -1,0 +1,19 @@
+package application.views.validation;
+
+import java.util.*;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+import org.eclipse.egf.common.helper.*;
+import org.eclipse.pmf.generator.egf.xwt.*;
+import org.eclipse.pmf.generator.egf.xwt.tools.*;
+
+
+public class CollectValidator {
+
+	public CollectValidator() {
+		//Here is the constructor
+	}
+
+

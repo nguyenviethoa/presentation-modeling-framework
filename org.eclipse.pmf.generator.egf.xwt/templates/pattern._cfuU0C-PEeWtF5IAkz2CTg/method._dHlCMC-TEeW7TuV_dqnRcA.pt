@@ -1,0 +1,15 @@
+<% 	
+		Node.Container node = ( (InternalPatternContext) ctx).getNode();
+		List<Node> actionNodes = new ArrayList();
+		List<Node> conditionNodes = new ArrayList();
+		
+		for (Node n: node.getChildren()){
+			if (n.getPatternClass() !=null && n.getPatternClass().equals("application.views.xwt.SetAction")){
+				actionNodes.add(n);
+			}
+		}
+		
+		node.getChildren().removeAll(actionNodes);
+		node.getChildren().addAll(actionNodes);
+		
+	%>

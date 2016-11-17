@@ -1,0 +1,97 @@
+<%
+		boolean hasColumns = false;
+		if (variable instanceof org.eclipse.pmf.pim.DataForm ){
+			org.eclipse.emf.common.util.EList<org.eclipse.pmf.pim.DataItem> children = ((org.eclipse.pmf.pim.ElementalDataForm)variable).getChildren();
+			for (org.eclipse.pmf.pim.DataItem dataItem : children) {
+				if (dataItem instanceof org.eclipse.pmf.pim.DataField){
+					hasColumns = true;
+					break;
+				}
+			}
+		}
+			if(hasColumns){	%>
+			</TableViewer.columns>
+			<TableViewer.table HeaderVisible="true"/>
+			<TableViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL" grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true" heightHint="70"/>
+			</TableViewer.control.layoutData>
+		</TableViewer>
+			<%}else{%>
+			<%
+				String labelProvider = (String) ctx
+					.getValue(Constants.LABEL_PROVIDER);
+					
+			if (labelProvider != null) {
+				//add the namespace for listViewer 
+				String[] nsPairs = XWTHelper.addNamespace(ctx, labelProvider);
+				String className = labelProvider;
+				if (labelProvider.indexOf(".")!=-1){
+					className = labelProvider.substring(labelProvider.lastIndexOf(".") + 1);
+				}
+				%>
+				<ListViewer.labelProvider>
+					<<%=nsPairs[1]%>:<%=className%>/>
+				</ListViewer.labelProvider>
+			<%}%>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL" grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true" heightHint="70"/>
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<%}%>
+<%
+
+if (((org.eclipse.pmf.pim.DataCollection)parameter).getDetail() != null  )
+{
+String dataForm = ((org.eclipse.pmf.pim.DataCollection)parameter).getDetail().getName();
+String dataType = ((org.eclipse.pmf.pim.DataCollection)parameter).getDetail().getDataContextType().getName();
+
+if (dataForm != null && dataForm.length() != 0 )
+{
+%>
+		
+		
+	<view:<%=dataType+dataForm%>View Name="details" dataContext="{Binding ElementName=<%=parameter.getName()%>,Path=singleSelection.(model:<%=dataForm%>)}">
+		<view:<%=dataType+dataForm%>View.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true"/>
+		</view:<%=dataType+dataForm%>View.layoutData>
+	</view:<%=dataType+dataForm%>View>
+<% }} %>
+
+<%
+//Add Control Buttons Here.
+	String typeName = DataBindingUtil.getPath(parameter.getDataBinding());
+	if (typeName!=null && typeName.length()>0){
+		typeName = Character.toUpperCase(typeName.charAt(0)) + typeName.substring(1);
+	}
+	if(parameter.isChangeable()){%>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			
+			<%String addText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, null, "Add");
+			if (parameter.isAddNew()){%>
+				<Button text="<%=addText%>" x:style="SWT.PUSH" selectionEvent="add<%=typeName%>"></Button>
+			                        <%}%>
+			
+			<%String removeText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, null, "Remove");
+			if (parameter.isRemovable()){%>
+				<Button text="<%=removeText%>"  x:style="SWT.PUSH" selectionEvent="remove<%=typeName%>" enabled="{Binding ElementName=<%=parameter.getName()%>Viewer, path=singleSelection}"></Button>
+			                            <%}%>
+			
+			<%String upText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, null, "Up");
+			  String downText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, null, "Down");
+			if (parameter.isReorderable()){%>
+				<Button text="<%=upText%>"  x:style="SWT.PUSH" selectionEvent="moveUp<%=typeName%>" enabled="{Binding ElementName=<%=parameter.getName()%>Viewer, path=singleSelection}"></Button>
+				<Button text="<%=downText%>" x:style="SWT.PUSH" selectionEvent="moveDown<%=typeName%>" enabled="{Binding ElementName=<%=parameter.getName()%>Viewer, path=singleSelection}"></Button>
+			                             <%}%>
+			                             
+			                             
+		</Composite>		
+	<%}
+%>
+<% // call from parent pattern 's end UI method %>

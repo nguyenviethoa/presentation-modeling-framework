@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.pmf.pim.tests/src" editDirectory="/org.eclipse.pmf.pim.tests.edit/src"
+    editorDirectory="/org.eclipse.pmf.pim.tests.editor/src" modelPluginID="org.eclipse.pmf.pim.tests"
+    modelName="Examples-validators-datechooser" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    editPluginID="org.eclipse.pmf.pim.tests.edit" editorPluginID="org.eclipse.pmf.pim.tests.editor"
+    operationReflection="true">
+  <foreignModel>examples-validators-datechooser.ecore</foreignModel>
+  <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="examples-validators-datechooser.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="examples-validators-datechooser.ecore#//Nationality">
+      <genEnumLiterals ecoreEnumLiteral="examples-validators-datechooser.ecore#//Nationality/Fr"/>
+      <genEnumLiterals ecoreEnumLiteral="examples-validators-datechooser.ecore#//Nationality/US"/>
+    </genEnums>
+    <genClasses ecoreClass="examples-validators-datechooser.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute examples-validators-datechooser.ecore#//Person/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute examples-validators-datechooser.ecore#//Person/nationality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute examples-validators-datechooser.ecore#//Person/married"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute examples-validators-datechooser.ecore#//Person/birthday"/>
+    </genClasses>
+    <genClasses ecoreClass="examples-validators-datechooser.ecore#//Company">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference examples-validators-datechooser.ecore#//Company/employees"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

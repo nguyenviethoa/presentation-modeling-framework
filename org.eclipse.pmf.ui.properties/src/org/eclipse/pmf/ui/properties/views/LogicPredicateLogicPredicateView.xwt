@@ -1,0 +1,54 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:o="clr-namespace:org.eclipse.pmf.pim.interactive"
+	xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages" xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	x:Class="org.eclipse.pmf.ui.properties.views.LogicPredicateLogicPredicateView"
+	x:name="LogicPredicate">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="operator" x:name="operator_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<ComboViewer singleSelection="{Binding path=operator}"
+		input="{Binding source={x:Type o:Operator}}" x:name="operator">
+		<ComboViewer.contentProvider>
+			<ObservableListContentProvider />
+		</ComboViewer.contentProvider>
+		<ComboViewer.control.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</ComboViewer.control.layoutData>
+	</ComboViewer>
+	<Label text="value" x:name="value_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Text x:style="BORDER" x:name="value">
+		<Text.text>
+			<Binding path="value" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Text.text>
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Text.layoutData>
+	</Text>
+	<Composite text="{x:Static m:Messages.PROPERTIES___LOGICPREDICATE_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:PredicatePredicateView x:name="Predicate">
+			<j:PredicatePredicateView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:PredicatePredicateView.layoutData>
+		</j:PredicatePredicateView>
+	</Composite>
+</Composite>

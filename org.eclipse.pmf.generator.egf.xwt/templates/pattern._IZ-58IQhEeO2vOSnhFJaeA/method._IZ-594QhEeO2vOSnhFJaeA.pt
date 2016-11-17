@@ -1,0 +1,15 @@
+<%
+	path = (String) ctx.getValue("path"); 
+//	validators = (EList<Validator>) ctx.getValue("validatorsControl");
+	dataItem = ((org.eclipse.pmf.pim.DataItem) ctx.getValue("container"));
+	if (dataItem.getControl() != null)
+		variable = dataItem.getControl();
+//	uiName = ((org.eclipse.pmf.pim.DataField) ctx.getValue("parameterDataField")).getName();
+	if (dataItem.getName() != null)
+		uiName = dataItem.getName();
+	allValidators = (Map<String, String>) ctx.getValue(Constants.VALIDATOR_NAMESPACE);
+	//help = null;
+	//label = null;
+	
+%> 
+<% if (variable != null) CounterHelper.incCounter (ctx); %>

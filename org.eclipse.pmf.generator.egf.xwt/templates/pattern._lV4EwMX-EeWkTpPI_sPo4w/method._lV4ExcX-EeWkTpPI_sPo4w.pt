@@ -1,0 +1,3 @@
+ 
+
+<GridLayout numColumns="<%=gridLayout.getNumColumns()%>" makeColumnsEqualWidth="<%=gridLayout.isMakeColumnsEqualWidth()%>"/>

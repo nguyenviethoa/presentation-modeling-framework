@@ -1,0 +1,38 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	x:Class="org.eclipse.pmf.ui.properties.views.nullBindingStatusView"
+	x:name="BindingStatus">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="ok" x:name="ok_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="null">
+		<Button.selection>
+			<Binding path="null" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Label text="message" x:name="message_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Text x:style="BORDER" x:name="null">
+		<Text.text>
+			<Binding path="null" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Text.text>
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Text.layoutData>
+	</Text>
+</Composite>

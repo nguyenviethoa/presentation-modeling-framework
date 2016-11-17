@@ -1,0 +1,7 @@
+<%
+// if (   ((org.eclipse.pmf.pim.DataField) ctx.getValue("parameterDataField")).getLabel() != null) {
+//   if (parameter == ((org.eclipse.pmf.pim.DataField) ctx.getValue("parameterDataField")).getLabel()){
+//   		label = parameter;
+//   }
+//}   
+%>

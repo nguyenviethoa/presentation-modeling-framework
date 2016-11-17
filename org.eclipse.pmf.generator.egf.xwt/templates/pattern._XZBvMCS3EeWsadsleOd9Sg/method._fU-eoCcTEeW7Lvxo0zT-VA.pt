@@ -1,0 +1,19 @@
+<% 
+	Boolean isMultiTrigger = false; 
+	if (parameter.getCondition() instanceof org.eclipse.pmf.pim.interactive.PredicateTerm){
+		org.eclipse.pmf.pim.interactive.PredicateTerm terms = (org.eclipse.pmf.pim.interactive.PredicateTerm) parameter.getCondition();
+		if (!terms.getTerms().isEmpty() && terms.getTerms().size() > 1){
+			isMultiTrigger = true;
+		}
+	}
+%>
+
+<% if (!isMultiTrigger) { %>
+
+>
+	 
+<%} else {%>
+
+	</MultiDataTrigger.Conditions>
+	
+<% }%>	

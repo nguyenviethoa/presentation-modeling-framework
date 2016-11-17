@@ -1,0 +1,39 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	x:Class="org.eclipse.pmf.ui.properties.views.BooleanButtonBooleanButtonView"
+	x:name="BooleanButton">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="selected" x:name="selected_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="selected">
+		<Button.selection>
+			<Binding path="selected" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Composite text="{x:Static m:Messages.PROPERTIES___BOOLEANBUTTON_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:ButtonButtonView x:name="Button">
+			<j:ButtonButtonView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:ButtonButtonView.layoutData>
+		</j:ButtonButtonView>
+	</Composite>
+</Composite>

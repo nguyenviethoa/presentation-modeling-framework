@@ -1,0 +1,18 @@
+	@Override
+	public boolean performFinish() {
+				 
+		return true;
+	}
+	
+     public boolean canFinish(){
+		 <%
+		 WizardPage lastPage = (WizardPage) parameter.getWizardPages().get(parameter.getWizardPages().size()-1);
+		 %>
+		if (this.getContainer().getCurrentPage() == <%=parameter.getWizardPages().get(0).getName()%>) 
+			return false;
+			
+		if (<%=lastPage.getName()%>.isPageComplete()) return true;
+		return false; 
+	}
+	
+}

@@ -1,0 +1,10 @@
+<% 
+		 
+	org.eclipse.pmf.pim.interactive.EventTrigger trigger = (org.eclipse.pmf.pim.interactive.EventTrigger) parameter.eContainer();
+	org.eclipse.pmf.pim.ui.UIEvent event = trigger.getEvent();
+	String eventname = event.getName();
+	
+	
+%>
+
+<%=eventname%>="<%=parameter.getName()%>"  

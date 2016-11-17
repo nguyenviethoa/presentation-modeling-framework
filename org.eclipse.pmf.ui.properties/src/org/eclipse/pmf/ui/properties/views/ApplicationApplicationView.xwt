@@ -1,0 +1,379 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views" xmlns:a="clr-namespace:org.eclipse.pmf.ui.properties.part"
+	x:Class="org.eclipse.pmf.ui.properties.views.ApplicationApplicationView"
+	x:name="Application">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Group text="{x:Static m:Messages.PROPERTIES___APPLICATION_MAIN}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:ContainerContainerView dataContext="{Binding path=main}">
+			<j:ContainerContainerView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:ContainerContainerView.layoutData>
+		</j:ContainerContainerView>
+	</Group>
+	<Label text="main *" x:name="main_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___APPLICATION_DATAMODELMANAGERS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="dataModelManagersViewer"
+			input="{Binding Path=dataModelManagers}">
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addDataModelManagers"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeDataModelManagers"
+				enabled="{Binding ElementName=dataModelManagersViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpDataModelManagers"
+				enabled="{Binding ElementName=dataModelManagersViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownDataModelManagers"
+				enabled="{Binding ElementName=dataModelManagersViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="dataModelManagers" x:name="dataModelManagers_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___APPLICATION_LIBRARIES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="librariesViewer"
+			input="{Binding Path=libraries}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addLibraries"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeLibraries"
+				enabled="{Binding ElementName=librariesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpLibraries"
+				enabled="{Binding ElementName=librariesViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownLibraries"
+				enabled="{Binding ElementName=librariesViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="libraries" x:name="libraries_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLVIEWPROFILES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allViewProfilesViewer"
+			input="{Binding Path=allViewProfiles}">
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+	</Composite>
+	<Label text="allViewProfiles" x:name="allViewProfiles_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLSYSTEMACTIONS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allSystemActionsViewer"
+			input="{Binding Path=allSystemActions}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+	</Composite>
+	<Label text="allSystemActions" x:name="allSystemActions_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLCOMMANDS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allCommandsViewer"
+			input="{Binding Path=allCommands}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+	</Composite>
+	<Label text="allCommands" x:name="allCommands_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLCONVERTERS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allConvertersViewer"
+			input="{Binding Path=allConverters}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+	</Composite>
+	<Label text="allConverters" x:name="allConverters_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite
+		text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLVALIDATORS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allValidatorsViewer"
+			input="{Binding Path=allValidators}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+	</Composite>
+	<Label text="allValidators" x:name="allValidators_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLTYPES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<TableViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allTypesViewer"
+			input="{Binding Path=allTypes}">
+			<TableViewer.columns>
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATATYPE_ABSTRACT}"
+					bindingPath="abstract" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATATYPE_PRIMITIVE}"
+					bindingPath="primitive" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATATYPE_ENUM}"
+					bindingPath="enum" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+					bindingPath="name" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+					bindingPath="description" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			</TableViewer.columns>
+			<TableViewer.table HeaderVisible="true" />
+			<TableViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</TableViewer.control.layoutData>
+		</TableViewer>
+	</Composite>
+	<Label text="allTypes" x:name="allTypes_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___APPLICATION_ALLIMAGES}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="1" />
+		</Composite.layout>
+		<ListViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="allImagesViewer"
+			input="{Binding Path=allImages}">
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+				bindingPath="name" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+				bindingPath="description" />
+			<TableViewerColumn width="150"
+				text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			<ListViewer.labelProvider>
+				<a:ApplicationLabelProvider />
+			</ListViewer.labelProvider>
+			<ListViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</ListViewer.control.layoutData>
+		</ListViewer>
+	</Composite>
+	<Label text="allImages" x:name="allImages_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___APPLICATION_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:LibraryLibraryView x:name="Library">
+			<j:LibraryLibraryView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:LibraryLibraryView.layoutData>
+		</j:LibraryLibraryView>
+	</Composite>
+</Composite>

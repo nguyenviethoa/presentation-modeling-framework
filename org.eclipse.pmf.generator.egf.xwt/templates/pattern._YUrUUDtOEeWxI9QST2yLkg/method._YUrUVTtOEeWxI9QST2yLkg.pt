@@ -1,0 +1,48 @@
+<%
+	org.eclipse.pmf.pim.DataComposite variable = (org.eclipse.pmf.pim.DataComposite)ctx.getValue("container");
+	String groupText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, variable, variable.getName());
+	
+%>
+
+<% if (variable.getControl() != null) {
+	
+	// if UI is GroupBox 
+	if (variable.getControl() instanceof org.eclipse.pmf.pim.ui.GroupBox) {%>
+	
+<Group text="<%=groupText%>">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+		<%int numColumns = variable.isChangeable()?2:1;%>
+			<% if (variable instanceof org.eclipse.pmf.pim.DataInheritance){%>
+			<GridLayout numColumns=1/>
+			<%} else {%>
+			<GridLayout numColumns="<%=numColumns%>"/>
+			<%}%>
+		</Group.layout>
+		
+<% 
+	// deal with other UI elements
+	}else {%>
+	  <Composite text="<%=groupText%>">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+		<%int numColumns = variable.isChangeable()?2:1;%>
+			<GridLayout numColumns="<%=numColumns%>"/>
+		</Composite.layout>
+	<% }
+	
+	// if no control specified
+  } else {%>
+  	<Composite text="<%=groupText%>">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+		<%int numColumns = variable.isChangeable()?2:1;%>
+			<GridLayout numColumns="<%=numColumns%>"/>
+		</Composite.layout>
+  <%}%>  		

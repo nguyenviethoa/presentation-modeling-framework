@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emf" nsURI="http://www.eclipse.org/pmf/emf" nsPrefix="pemf">
+  <eClassifiers xsi:type="ecore:EClass" name="EMFDataModelManagerFactory" eSuperTypes="pmf.ecore#//DataModelManagerFactory"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFDataModelManager" eSuperTypes="pmf.ecore#//data/DataModelManager">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeMap" upperBound="-1"
+        eType="#//EClassToDataTypeMapEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFType" eSuperTypes="pmf.ecore#//data/DataType">
+    <eOperations name="updateGenmodel">
+      <eParameters name="genmodel" eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClassifier"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genmodel" eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFProperty" eSuperTypes="pmf.ecore#//data/DataProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genmodel" eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClassToDataTypeMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//EMFType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFFileInput" eSuperTypes="pmf.ecore#//datainput/FileInput"/>
+</ecore:EPackage>

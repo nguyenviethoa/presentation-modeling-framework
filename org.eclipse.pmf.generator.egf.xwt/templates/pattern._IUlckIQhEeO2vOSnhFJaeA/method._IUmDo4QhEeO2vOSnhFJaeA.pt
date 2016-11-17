@@ -1,0 +1,32 @@
+<% CounterHelper.resetCounter (ctx); %>
+<%
+	String path = DataBindingUtil.getPath(parameter.getDataBinding());
+		EList<Validator> validators = parameter.getDataBinding().getValidators();
+		Map<String, String> allValidators = (Map<String, String>)ctx.getValue(Constants.VALIDATORS);
+		
+		if (validators != null && !validators.isEmpty()){
+			for (Validator v : validators){
+				String validatorPath = allValidators.get(v.getId());
+				if (null == validatorPath)
+					validatorPath = v.getId();
+				XWTHelper.addNamespace(ctx, validatorPath);
+			}
+		}	
+		ctx.setValue("container", parameter);
+		ctx.setValue("path", path);
+		ctx.setValue("validatorsControl", validators);
+		
+		control = parameter.getControl();
+		
+		// generatedTriggers is used to mark the moment of calling patterns of triggers
+		ctx.setValue("generatedTriggers", false);
+		// generatedUIAttributes is used to mark the moment of calling patterns of UI elements (font, color, ...)
+		ctx.setValue("generatedUIAttributes", true);
+		
+%>
+<%
+	String labelText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, parameter, parameter.getName());
+%> 	
+
+
+

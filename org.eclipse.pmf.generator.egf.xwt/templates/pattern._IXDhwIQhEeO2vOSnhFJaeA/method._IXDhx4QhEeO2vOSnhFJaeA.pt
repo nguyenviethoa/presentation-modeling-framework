@@ -1,0 +1,9 @@
+
+		<ComboViewer.contentProvider>
+			<ObservableListContentProvider/>
+		</ComboViewer.contentProvider>
+		<ComboViewer.control.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</ComboViewer.control.layoutData>
+</ComboViewer>

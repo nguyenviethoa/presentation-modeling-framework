@@ -1,0 +1,9 @@
+<%
+String projectId = parameter.getName();
+IPath path = new Path(projectId).append(Constants.DEFAULT_SOURCE_FOLDER);
+String[] paths = projectId.split("\\.");
+for (String segment : paths)
+	path = path.append(segment);
+path = path.append("part").append(parameter.eClass().getName() + "AdvancedPropertySection.java");
+ctx.setValue(Constants.TARGET_FILE, path);  
+%>

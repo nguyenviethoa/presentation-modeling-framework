@@ -1,0 +1,83 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views" x:Class="org.eclipse.pmf.ui.properties.views.UIElementUIElementView"
+	x:name="UIElement">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Group text="{x:Static m:Messages.PROPERTIES___UIELEMENT_FOREGROUND}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:ColorColorView dataContext="{Binding path=foreground}">
+			<j:ColorColorView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:ColorColorView.layoutData>
+		</j:ColorColorView>
+	</Group>
+	<Label text="foreground" x:name="foreground_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___UIELEMENT_BACKGROUND}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:ColorColorView dataContext="{Binding path=background}">
+			<j:ColorColorView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:ColorColorView.layoutData>
+		</j:ColorColorView>
+	</Group>
+	<Label text="background" x:name="background_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___UIELEMENT_FONT}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:FontFontView dataContext="{Binding path=font}">
+			<j:FontFontView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:FontFontView.layoutData>
+		</j:FontFontView>
+	</Group>
+	<Label text="font" x:name="font_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___UIELEMENT_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:UIObjectUIObjectView x:name="UIObject">
+			<j:UIObjectUIObjectView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:UIObjectUIObjectView.layoutData>
+		</j:UIObjectUIObjectView>
+	</Composite>
+</Composite>

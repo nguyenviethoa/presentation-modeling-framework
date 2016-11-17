@@ -1,0 +1,1 @@
+return !(parameter instanceof org.eclipse.pmf.pim.ui.BooleanButton) && !(parameter instanceof org.eclipse.pmf.pim.ui.RadioButton);

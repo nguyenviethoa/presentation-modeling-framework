@@ -1,0 +1,1 @@
+<%@ jet package="PACKAGE" class="CLASS" imports="org.eclipse.egf.common.helper.* org.eclipse.pmf.pim.interactive.* org.eclipse.pmf.pim.ui.* org.eclipse.pmf.generator.egf.xwt.* org.eclipse.pmf.generator.egf.xwt.tools.* java.util.* org.eclipse.emf.ecore.* org.eclipse.egf.model.pattern.* org.eclipse.egf.pattern.execution.* org.eclipse.egf.pattern.query.*"  %>

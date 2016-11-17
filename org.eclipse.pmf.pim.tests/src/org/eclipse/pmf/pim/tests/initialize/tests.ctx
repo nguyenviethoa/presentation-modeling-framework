@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tm:CodeGenContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:tm="http://www.eclipse.org/pmf/transformation" name="Validators Codegen Context">
+  <validatorMap key="org.eclipse.pmf.pim.tests.initialize.EMailValidator" value="org.eclipse.pmf.pim.tests.initialize.EMailValidator"/>
+</tm:CodeGenContext>

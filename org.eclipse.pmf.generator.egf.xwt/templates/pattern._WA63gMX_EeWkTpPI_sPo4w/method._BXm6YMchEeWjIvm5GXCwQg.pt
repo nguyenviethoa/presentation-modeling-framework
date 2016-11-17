@@ -1,0 +1,25 @@
+
+<%
+    gridData = null;
+   
+	
+	   
+    if (layoutData==null) 	{
+        	%>	
+			   <GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true"/>
+		    <%
+		 }
+	
+   else if (layoutData instanceof org.eclipse.pmf.pim.ui.GridData) {
+            
+            gridData = (org.eclipse.pmf.pim.ui.GridData) layoutData;
+             InternalPatternContext inctx = (InternalPatternContext) ctx;
+            final Map<String, Object> parameters = new HashMap<String, Object>();
+			parameters.put("gridData", this.gridData);
+			ExecutionContext ctx_local = new ExecutionContext(inctx);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_YbwiQMX_EeWkTpPI_sPo4w",
+					ctx_local, parameters);
+	    }
+
+%>     

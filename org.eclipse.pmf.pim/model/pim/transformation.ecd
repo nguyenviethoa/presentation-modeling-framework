@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="transformation" size="1195,492" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation" metadata="emf-1.0" initialized="true" tag="100" key="32303037303533312D313030206F72672E65636C697073652E706D662E70696D">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.1/@sourceConnections.1" name="ResourceResolver" location="167,110" size="156,147" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="viewProfileMap" location="86,0" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver/viewProfileMap" multiplicityLabel="//@children.0/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="570,94" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="viewProfileMap" location="588,94" size="74,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/ResourceResolver/viewProfileMap"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,0" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="validatorMap" location="119,137" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver/validatorMap" multiplicityLabel="//@children.0/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.1/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="603,259" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="validatorMap" location="621,259" size="61,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/ResourceResolver/validatorMap"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="137,147" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="commandMap" location="0,5" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver/commandMap" multiplicityLabel="//@children.0/@sourceConnections.2/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.2/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="484,127" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="commandMap" location="422,99" size="66,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/ResourceResolver/commandMap"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,10" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.3/@children.0" sourceEnd="//@children.0/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="systemActionMap" location="0,111" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver/systemActionMap" multiplicityLabel="//@children.0/@sourceConnections.3/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.3/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="484,233" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="systemActionMap" location="402,205" size="86,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/ResourceResolver/systemActionMap"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,116" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.4/@children.0" sourceEnd="//@children.0/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="imageMap" location="0,77" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver/imageMap" multiplicityLabel="//@children.0/@sourceConnections.4/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.4/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="484,199" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="imageMap" location="440,171" size="48,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/ResourceResolver/imageMap"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,82" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.5/@children.0" sourceEnd="//@children.0/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="dataConverterMap" location="0,41" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/ResourceResolver/dataConverterMap" multiplicityLabel="//@children.0/@sourceConnections.5/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.5/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="484,163" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="dataConverterMap" location="399,135" size="89,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/ResourceResolver/dataConverterMap"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="156,46" attachSource="true"/>
+    </sourceConnections>
+    <model href="../pmf.ecore#//transformation/ResourceResolver"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CodeGenContext" location="170,330" size="150,157" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext" runTimeClassModel=" getDataConverter(key: EString): EString, getSystemAction(key: EString): EString, getValidator(key: EString): EString, getCommand(key: EString): EString, getViewProfile(key: EString): EString, getImage(key: EString): EString">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="115,108">
+      <children xsi:type="editmodel:MethodEditModel" name="getCommand" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/getCommand">
+        <model href="../pmf.ecore#//transformation/CodeGenContext/getCommand"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="getDataConverter" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/getDataConverter">
+        <model href="../pmf.ecore#//transformation/CodeGenContext/getDataConverter"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="getImage" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/getImage">
+        <model href="../pmf.ecore#//transformation/CodeGenContext/getImage"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="getSystemAction" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/getSystemAction">
+        <model href="../pmf.ecore#//transformation/CodeGenContext/getSystemAction"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="getValidator" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/getValidator">
+        <model href="../pmf.ecore#//transformation/CodeGenContext/getValidator"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="getViewProfile" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/getViewProfile">
+        <model href="../pmf.ecore#//transformation/CodeGenContext/getViewProfile"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="78,147"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="resourceResolvers" location="0,130" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation/CodeGenContext/resourceResolvers" multiplicityLabel="//@children.1/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.1/@sourceConnections.1/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="156,247" size="4,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="resourceResolvers" location="67,219" size="93,14" anchorKind="LastPart"/>
+        <model href="../pmf.ecore#//transformation/CodeGenContext/resourceResolvers"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,16" attachSource="true"/>
+    </sourceConnections>
+    <model href="../pmf.ecore#//transformation/CodeGenContext"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.0/@sourceConnections.2 //@children.0/@sourceConnections.1 //@children.0/@sourceConnections.3 //@children.0/@sourceConnections.4 //@children.0/@sourceConnections.5" name="EStringToStringMapEntry" location="495,115" size="244,137" id="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="key" id="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry/key">
+        <model href="../../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry/key"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="value" id="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry/value">
+        <model href="../../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry/value"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStringToStringMapEntry"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="../pmf.ecore#//transformation"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="open=platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//transformation;wireOptions=1;Product=eEmf"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

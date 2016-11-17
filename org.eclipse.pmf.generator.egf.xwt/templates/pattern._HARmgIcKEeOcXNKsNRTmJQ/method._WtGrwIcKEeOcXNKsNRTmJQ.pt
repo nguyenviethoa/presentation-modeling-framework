@@ -1,0 +1,21 @@
+<%
+		String stringExternalClass = (String) ctx.getValue(Constants.STRINGS_EXTERNAL);
+		if (stringExternalClass == null){
+			return;
+		}
+		String fullyClassName = stringExternalClass;
+		if (stringExternalClass.indexOf(".") == -1){
+			String value = (String) ctx.getValue(Constants.MODEL_PACKAGE);
+			if (value != null){
+				fullyClassName = value + "." + stringExternalClass;
+			}
+		}
+		String project = (String) ctx.getValue(Constants.GENERATED_PROJECT);
+		IPath path = new Path(project).append(Constants.DEFAULT_SOURCE_FOLDER);
+		String[] paths = fullyClassName.split("\\.");
+		for (String segment : paths){
+			path = path.append(segment);
+		}
+		path = path.addFileExtension("java");
+		ctx.setValue(Constants.TARGET_FILE, path);
+%>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pim:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:databinding="http://www.eclipse.org/pmf/databinding" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" xmlns:pemf="http://www.eclipse.org/pmf/emf" xmlns:pim="http://www.eclipse.org/pmf" xmlns:ui="http://www.eclipse.org/pmf/ui" name="testpersonproject">
+  <types xsi:type="pemf:EMFType" name="Customer" superTypes="//@types.1">
+    <genericSuperTypes type="//@types.1"/>
+    <content xsi:type="ecore:EClass" href="examples-validators.ecore#//Customer"/>
+    <genmodel xsi:type="genmodel:GenClass" href="examples-validators.genmodel#//model/Customer"/>
+  </types>
+  <types xsi:type="pemf:EMFType" name="Person">
+    <properties xsi:type="pemf:EMFProperty" name="email" type="//@dataModelManagers.0/@typeMap.2/@value">
+      <genericType type="//@dataModelManagers.0/@typeMap.2/@value"/>
+      <content xsi:type="ecore:EAttribute" href="examples-validators.ecore#//Person/email"/>
+      <genmodel href="examples-validators.genmodel#//model/Person/email"/>
+    </properties>
+    <properties xsi:type="pemf:EMFProperty" name="nationality" type="//@types.2">
+      <genericType type="//@types.2"/>
+      <content xsi:type="ecore:EAttribute" href="examples-validators.ecore#//Person/nationality"/>
+      <genmodel href="examples-validators.genmodel#//model/Person/nationality"/>
+    </properties>
+    <properties xsi:type="pemf:EMFProperty" name="married" type="//@dataModelManagers.0/@typeMap.3/@value">
+      <genericType type="//@dataModelManagers.0/@typeMap.3/@value"/>
+      <content xsi:type="ecore:EAttribute" href="examples-validators.ecore#//Person/married"/>
+      <genmodel href="examples-validators.genmodel#//model/Person/married"/>
+    </properties>
+    <properties xsi:type="pemf:EMFProperty" name="birthday" type="//@dataModelManagers.0/@typeMap.4/@value">
+      <genericType type="//@dataModelManagers.0/@typeMap.4/@value"/>
+      <content xsi:type="ecore:EAttribute" href="examples-validators.ecore#//Person/birthday"/>
+      <genmodel href="examples-validators.genmodel#//model/Person/birthday"/>
+    </properties>
+    <content xsi:type="ecore:EClass" href="examples-validators.ecore#//Person"/>
+    <genmodel xsi:type="genmodel:GenClass" href="examples-validators.genmodel#//model/Person"/>
+  </types>
+  <types xsi:type="pemf:EMFType" name="Nationality" enum="true">
+    <content xsi:type="ecore:EEnum" href="examples-validators.ecore#//Nationality"/>
+    <genmodel xsi:type="genmodel:GenEnum" href="examples-validators.genmodel#//model/Nationality"/>
+  </types>
+  <types xsi:type="pemf:EMFType" name="Company">
+    <properties xsi:type="pemf:EMFProperty" name="employees" type="//@types.1">
+      <genericType type="//@types.1"/>
+      <content xsi:type="ecore:EReference" href="examples-validators.ecore#//Company/employees"/>
+      <genmodel href="examples-validators.genmodel#//model/Company/employees"/>
+    </properties>
+    <content xsi:type="ecore:EClass" href="examples-validators.ecore#//Company"/>
+    <genmodel xsi:type="genmodel:GenClass" href="examples-validators.genmodel#//model/Company"/>
+  </types>
+  <dataFormFolders key="//@types.2">
+    <value defaultDataForm="//@dataFormFolders.0/@value/@dataForms.0">
+      <dataForms name="Nationality" dataContextType="//@types.2"/>
+    </value>
+  </dataFormFolders>
+  <dataFormFolders key="//@types.1">
+    <value defaultDataForm="//@dataFormFolders.1/@value/@dataForms.0">
+      <dataForms name="Person" dataContextType="//@types.1">
+        <children xsi:type="pim:DataField" name="email">
+          <dataBinding>
+            <path xsi:type="databinding:DataBindingLeaf" feature="//@types.1/@properties.0"/>
+          </dataBinding>
+          <label xsi:type="ui:Label" text="email"/>
+        </children>
+        <children xsi:type="pim:DataField" name="nationality">
+          <dataBinding>
+            <path xsi:type="databinding:DataBindingLeaf" feature="//@types.1/@properties.1"/>
+          </dataBinding>
+          <label xsi:type="ui:Label" text="nationality"/>
+        </children>
+        <children xsi:type="pim:DataField" name="married">
+          <dataBinding>
+            <path xsi:type="databinding:DataBindingLeaf" feature="//@types.1/@properties.2"/>
+          </dataBinding>
+          <label xsi:type="ui:Label" text="married"/>
+        </children>
+        <children xsi:type="pim:DataField" name="birthday">
+          <dataBinding>
+            <path xsi:type="databinding:DataBindingLeaf" feature="//@types.1/@properties.3"/>
+          </dataBinding>
+          <label xsi:type="ui:Label" text="birthday"/>
+        </children>
+      </dataForms>
+    </value>
+  </dataFormFolders>
+  <dataFormFolders key="//@types.3">
+    <value defaultDataForm="//@dataFormFolders.2/@value/@dataForms.0">
+      <dataForms name="Company" dataContextType="//@types.3">
+        <children xsi:type="pim:DataCollection" name="employees" dataContextType="//@types.1" removable="true" editable="true">
+          <dataBinding>
+            <path xsi:type="databinding:DataBindingLeaf" feature="//@types.3/@properties.0"/>
+          </dataBinding>
+          <label xsi:type="ui:Label" text="employees"/>
+        </children>
+      </dataForms>
+    </value>
+  </dataFormFolders>
+  <dataFormFolders key="//@types.0">
+    <value defaultDataForm="//@dataFormFolders.3/@value/@dataForms.0">
+      <dataForms name="Customer" dataContextType="//@types.0">
+        <children xsi:type="pim:DataInheritance" dataForm="//@dataFormFolders.1/@value/@dataForms.0" dataType="//@types.1">
+          <dataBinding/>
+        </children>
+      </dataForms>
+    </value>
+  </dataFormFolders>
+  <dataModelManagers xsi:type="pemf:EMFDataModelManager">
+    <typeMap>
+      <key xsi:type="ecore:EEnum" href="examples-validators.ecore#//Nationality"/>
+    </typeMap>
+    <typeMap>
+      <key xsi:type="ecore:EClass" href="examples-validators.ecore#//Person"/>
+    </typeMap>
+    <typeMap>
+      <value name="EString" id="java.lang.String">
+        <content xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </value>
+      <key xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </typeMap>
+    <typeMap>
+      <value name="EBoolean" id="boolean">
+        <content xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </value>
+      <key xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </typeMap>
+    <typeMap>
+      <value name="EDate" id="java.util.Date">
+        <content xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      </value>
+      <key xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </typeMap>
+    <typeMap>
+      <key xsi:type="ecore:EClass" href="examples-validators.ecore#//Company"/>
+    </typeMap>
+    <typeMap>
+      <key xsi:type="ecore:EClass" href="examples-validators.ecore#//Customer"/>
+    </typeMap>
+  </dataModelManagers>
+</pim:Application>

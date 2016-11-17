@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="emf" size="1027,733" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#/" metadata="emf-1.0" initialized="true" tag="100" key="32303037303533312D313030206F72672E65636C697073652E706D662E70696D">
+  <children xsi:type="editmodel:ClassEditModel" name="EMFDataModelManager" location="345,195" size="193,29" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFDataModelManager" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.0" target="//@children.5" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,103"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.1/@children.1" sourceEnd="//@children.0/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="typeMap" location="96,0" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFDataModelManager/typeMap" multiplicityLabel="//@children.0/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.1/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="typeMap" location="448,251" size="41,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="430,251" size="4,14" anchorKind="LastPart"/>
+        <model href="emf.ecore#//EMFDataModelManager/typeMap"/>
+      </children>
+    </sourceConnections>
+    <model href="emf.ecore#//EMFDataModelManager"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="EMFType" location="632,182" size="134,67" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFType" runTimeClassModel=" updateGenmodel(genmodel: GenClassifier)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="111,18">
+      <children xsi:type="editmodel:MethodEditModel" name="updateGenmodel" id="platform:/resource/org.eclipse.pmf.pim/model/emf.ecore#//EMFType/updateGenmodel">
+        <model href="emf.ecore#//EMFType/updateGenmodel"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.7" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="content" location="89,0" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFType/content" multiplicityLabel="//@children.1/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="content" location="700,294" size="36,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="668,294" size="18,14" anchorKind="LastPart"/>
+        <model href="emf.ecore#//EMFType/content"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.1" target="//@children.10" targetEnd="//@children.1/@sourceConnections.1/@children.1" sourceEnd="//@children.1/@sourceConnections.1/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="42,93" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="emf.ecore#//EMFType"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="EMFProperty" location="365,520" size="123,29" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFProperty" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="content" location="56,0" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFProperty/content" multiplicityLabel="//@children.2/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="content" location="438,577" size="36,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="406,577" size="18,14" anchorKind="LastPart"/>
+        <model href="emf.ecore#//EMFProperty/content"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.2" target="//@children.11" targetEnd="//@children.2/@sourceConnections.1/@children.1" sourceEnd="//@children.2/@sourceConnections.1/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,75" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="emf.ecore#//EMFProperty"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="EStructuralFeature" location="375,598" size="205,29" id="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <model href="http://www.eclipse.org/emf/2002/Ecore#//EStructuralFeature"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.1" name="EClassToDataTypeMapEntry" location="345,272" size="216,29" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EClassToDataTypeMapEntry" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="206,29" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="key" location="0,10" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EClassToDataTypeMapEntry/key" multiplicityLabel="//@children.4/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="key" location="580,304" size="17,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="579,332" size="18,14" anchorKind="LastPart"/>
+        <model href="emf.ecore#//EClassToDataTypeMapEntry/key"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.10" targetEnd="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="value" location="0,58" id="platform:/resource/org.eclipse.pmf.pim/model/emf.ecore#//EClassToDataTypeMapEntry/value" multiplicityLabel="//@children.4/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.4/@sourceConnections.1/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="655,121" size="18,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="value" location="647,93" size="26,14" anchorKind="LastPart"/>
+        <model href="emf.ecore#//EClassToDataTypeMapEntry/value"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="216,10" attachSource="true"/>
+    </sourceConnections>
+    <model href="emf.ecore#//EClassToDataTypeMapEntry"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="DataModelManager" location="345,51" size="234,103" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataModelManager" runTimeClassModel=" loadFor(view: DataForm, dataType: DataType), isTargetFor(type: Object): EBoolean, getDataModelType(type: Object): DataType">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="118,54">
+      <children xsi:type="editmodel:MethodEditModel" name="getDataModelType" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataModelManager/getDataModelType">
+        <model href="pmf.ecore#//data/DataModelManager/getDataModelType"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="isTargetFor" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataModelManager/isTargetFor">
+        <model href="pmf.ecore#//data/DataModelManager/isTargetFor"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="loadFor" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataModelManager/loadFor">
+        <model href="pmf.ecore#//data/DataModelManager/loadFor"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="pmf.ecore#//data/DataModelManager"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="EMFDataModelManagerFactory" location="62,182" size="240,29" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFDataModelManagerFactory" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.6" target="//@children.8" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="119,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="122,85"/>
+    </sourceConnections>
+    <model href="emf.ecore#//EMFDataModelManagerFactory"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.1/@sourceConnections.0" name="EClassifier" location="604,315" size="152,29" id="http://www.eclipse.org/emf/2002/Ecore#//EClassifier">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <model href="http://www.eclipse.org/emf/2002/Ecore#//EClassifier"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="DataModelManagerFactory" location="59,51" size="245,85" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//DataModelManagerFactory" runTimeClassModel=" isTargetFor(dataType: EJavaObject): EBoolean, createDataModelManager(): DataModelManager">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="153,36">
+      <children xsi:type="editmodel:MethodEditModel" name="createDataModelManager" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//DataModelManagerFactory/createDataModelManager">
+        <model href="pmf.ecore#//DataModelManagerFactory/createDataModelManager"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="isTargetFor" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//DataModelManagerFactory/isTargetFor">
+        <model href="pmf.ecore#//DataModelManagerFactory/isTargetFor"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="pmf.ecore#//DataModelManagerFactory"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="EMFFileInput" location="105,390" size="125,29" id="platform:/resource/org.eclipse.pmf.emf/model/emf.ecore#//EMFFileInput" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="emf.ecore#//EMFFileInput"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1 //@children.4/@sourceConnections.1" name="DataType" location="680,56" size="169,93" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType" runTimeClassModel="abstract,enum,primitive">
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="abstract" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType/abstract">
+        <model href="pmf.ecore#//data/DataType/abstract"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="primitive" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType/primitive">
+        <model href="pmf.ecore#//data/DataType/primitive"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="enum" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataType/enum">
+        <model href="pmf.ecore#//data/DataType/enum"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="pmf.ecore#//data/DataType"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1" name="DataProperty" location="330,390" size="193,75" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataProperty" runTimeClassModel="many,mandatory">
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="mandatory" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataProperty/mandatory">
+        <model href="pmf.ecore#//data/DataProperty/mandatory"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="many" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//data/DataProperty/many">
+        <model href="pmf.ecore#//data/DataProperty/many"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="pmf.ecore#//data/DataProperty"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GenClassifier" location="765,362" size="198,29" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClassifier">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClassifier"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GenFeature" location="720,512" size="193,201" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature">
+    <children xsi:type="editmodel:CompartmentEditModel" size="170,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="children" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/children">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/children"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="createChild" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/createChild">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/createChild"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="notify" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/notify">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/notify"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="property" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/property">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/property"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="propertyCategory" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyCategory">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyCategory"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="propertyDescription" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyDescription">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyDescription"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="propertyFilterFlags" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyFilterFlags">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyFilterFlags"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="propertyMultiLine" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyMultiLine">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertyMultiLine"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="propertySortChoices" id="platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertySortChoices">
+        <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature/propertySortChoices"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../../plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="emf.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eEmf" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

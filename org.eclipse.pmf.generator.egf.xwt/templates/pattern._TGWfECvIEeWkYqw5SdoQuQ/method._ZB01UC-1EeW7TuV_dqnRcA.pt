@@ -1,0 +1,10 @@
+<%
+	org.eclipse.pmf.pim.interactive.UIPredicate uiPredicate = (org.eclipse.pmf.pim.interactive.UIPredicate) parameter;
+	
+	Boolean isMultiTrigger = (Boolean) ctx.getValue("isMultiTrigger");
+%>
+
+<% if (isMultiTrigger) {%>
+
+ 	<Condition 
+ <%}%>

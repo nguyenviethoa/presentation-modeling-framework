@@ -1,0 +1,31 @@
+<%
+		Map<String, String> strings = (Map<String, String>) ctx
+				.getValue(Constants.STRINGS_EXTERNAL_MAP);
+		if (strings != null) {
+			String[] keys = strings.keySet().toArray(new String[0]);
+			Arrays.sort(keys);
+			for (String key : keys) {
+				//Don't format here, this would change the predefined value.
+				String value = strings.get(key);
+		
+									
+	  //Delete special chars "_" and replace them by space
+	  value=value.replaceAll("_"," ");
+	  
+	  //Make first letter of each Attribute's word in Uppercase
+	  StringBuffer stringbf = new StringBuffer();
+      Matcher m = Pattern.compile("([a-z])([a-z]*)",
+      Pattern.CASE_INSENSITIVE).matcher(value);
+      while (m.find()) {
+         m.appendReplacement(stringbf, 
+         m.group(1).toUpperCase() + m.group(2).toLowerCase());
+      }
+    String valueToDisplay =  m.appendTail(stringbf).toString();
+      
+%>
+<%=key%>=<%=valueToDisplay%>
+
+<%			
+			}
+		}
+%>

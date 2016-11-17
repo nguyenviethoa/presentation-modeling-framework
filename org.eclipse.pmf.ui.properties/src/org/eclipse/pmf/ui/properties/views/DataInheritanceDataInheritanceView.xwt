@@ -1,0 +1,8 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt"
+	x:Class="org.eclipse.pmf.ui.properties.views.DataInheritanceDataInheritanceView"
+	x:name="DataInheritance">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+</Composite>

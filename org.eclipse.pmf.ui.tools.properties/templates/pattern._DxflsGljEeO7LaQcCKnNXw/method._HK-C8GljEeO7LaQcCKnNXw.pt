@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="<%=parameter.getName()%>"
+            tabDescriptorProvider="<%=parameter.getName()%>.part.XWTTabDescriptorProvider">
+         <propertyCategory
+               category="basic"></propertyCategory>
+      </propertyContributor>
+   </extension>
+<!-- Add Advanced Tab-->
+ <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="<%=parameter.getName()%>">
+         <propertyTab
+               category="basic"
+               id="advancedTab"
+               label="Advanced">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="<%=parameter.getName()%>">
+         <propertySection
+               class="<%=parameter.getName()%>.part.<%=parameter.eClass().getName()%>AdvancedPropertySection"
+               id="advancedSection"
+               tab="advancedTab">
+            <input
+                  type="org.eclipse.emf.ecore.EObject">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   <!--popup menu Show DataForm-->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.pmf.ui.properties.<%=parameter.getName()%>.indataForm"
+            objectClass="org.eclipse.pmf.emf.EMFType">
+         <menu
+               id="org.eclipse.pmf.ui.properties.<%=parameter.getName()%>.indataForm"
+               label="PMF">
+            <separator
+                  name="main">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.pmf.ui.properties.menus.ShowDataForm"
+               id="org.eclipse.pmf.ui.properties.<%=parameter.getName()%>.indataForm"
+               label="Show in DataForm"
+               menubarPath="org.eclipse.pmf.ui.tools.menu/main">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.pmf.ui.properties.<%=parameter.getName()%>.dataForm"
+            objectClass="org.eclipse.pmf.pim.DataForm">
+         <menu
+               id="org.eclipse.pmf.ui.properties.<%=parameter.getName()%>.dataForm"
+               label="PMF">
+            <separator
+                  name="main">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.pmf.ui.properties.menus.ShowDataForm"
+               id="org.eclipse.pmf.ui.properties.<%=parameter.getName()%>.dataForm"
+               label="Show DataForm"
+               menubarPath="org.eclipse.pmf.ui.tools.menu/main">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

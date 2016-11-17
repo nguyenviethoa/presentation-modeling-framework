@@ -1,0 +1,45 @@
+
+String ee = "J2SE-1.5";
+String projectId = parameter.getName();
+
+        IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+        IProject project = root.getProject(projectId);
+
+            if (!project.exists())
+                CoreUtility.createProject(project, root.getRawLocation(), null);
+            project.open(null);
+            CoreUtility.addNatureToProject(project, PDE.PLUGIN_NATURE, null);
+            CoreUtility.addNatureToProject(project, JavaCore.NATURE_ID, null);
+            CoreUtility.createFolder(project.getFolder(Constants.GENERATED_SOURCE_FOLDER));
+
+            CoreUtility.createFolder(project.getFolder("model"));
+
+            IFolder src = project.getFolder(Constants.DEFAULT_SOURCE_FOLDER);
+            CoreUtility.createFolder(src);
+            
+            //create default packages
+            IPath path = new Path("");
+String[] paths = projectId.split("\\.");
+for (String segment : paths)
+{
+	path = path.append(segment);
+   	CoreUtility.createFolder(src.getFolder(path));
+	}
+            
+            CoreUtility.createFolder(src.getFolder(path).getFolder("part"));
+            
+            // set up classpath
+            IJavaProject javaProject = JavaCore.create(project);
+            // Set output folder
+            path = project.getFullPath().append("bin");
+            javaProject.setOutputLocation(path, null);
+
+            IClasspathEntry[] entries = new IClasspathEntry[4];
+            entries[0] = JavaCore.newSourceEntry(project.getProject().getFullPath().append(Constants.DEFAULT_SOURCE_FOLDER));
+            entries[1] = JavaCore.newSourceEntry(project.getProject().getFullPath().append(Constants.GENERATED_SOURCE_FOLDER));
+            ClasspathComputer.setComplianceOptions(javaProject, ee);
+            entries[2] = ClasspathComputer.createJREEntry(ee);
+            entries[3] = ClasspathComputer.createContainerEntry();
+            javaProject.setRawClasspath(entries, null);
+
+

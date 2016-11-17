@@ -1,0 +1,7 @@
+String _package = (String)ctx.getValue("model.package.name");
+if (_package == null){
+	_package = parameter.getName()+".views";
+}
+ctx.setValue(Constants.VIEW_PACKAGE, _package);
+ctx.setValue(Constants.GENERATED_PROJECT, parameter.getName());
+ctx.setValue(Constants.APPLICATION, parameter);

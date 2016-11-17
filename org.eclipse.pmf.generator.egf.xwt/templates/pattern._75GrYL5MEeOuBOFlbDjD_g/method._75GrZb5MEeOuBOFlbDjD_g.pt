@@ -1,0 +1,16 @@
+<%
+	String dataForm = parameter.getDataForm().getName();
+	String dataType = parameter.getDataForm().getDataContextType().getName();
+	
+	String groupText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, parameter, parameter.getName());
+	String modelPackage = (String)ctx.getValue("model.package.name");
+	String nsPrefix = XWTHelper.addNamespace(ctx, modelPackage + ".*")[1];
+	
+%>
+
+	<<%=nsPrefix%>:<%=dataType+dataForm%>View x:name="<%=dataForm%>">
+		<<%=nsPrefix%>:<%=dataType+dataForm%>View.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true"/>
+		</<%=nsPrefix%>:<%=dataType+dataForm%>View.layoutData>
+	</<%=nsPrefix%>:<%=dataType+dataForm%>View>
+

@@ -1,0 +1,5 @@
+<%
+InternalPatternContext itemCtx = (InternalPatternContext) ctx;
+Node.Container container = (Node.Container) itemCtx.getNode().getParent().getParent();
+container.getChildren().addAll(itemCtx.getNode().getChildren());
+%>

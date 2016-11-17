@@ -1,0 +1,3 @@
+<%String columnText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, parameter, parameter.getName());%>
+<TableViewerColumn width="150" text="<%=columnText%>" bindingPath="<%=DataBindingUtil.getPath(parameter.getDataBinding())%>"/>
+

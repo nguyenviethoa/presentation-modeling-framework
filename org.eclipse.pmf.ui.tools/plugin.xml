@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.pmf.emf.ui.contribution1"
+            objectClass="org.eclipse.pmf.pim.Application">
+         <menu
+               id="org.eclipse.pmf.emf.ui.menu"
+               label="PMF"
+               path="actions">
+            <separator
+                  name="main">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.pmf.emf.ui.popup.actions.ImportModel"
+               enablesFor="1"
+               id="org.eclipse.pmf.emf.ui.importModel"
+               label="Import Model"
+               menubarPath="org.eclipse.pmf.emf.ui.menu/main">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.eclipse.pmf.ui.tools.objectContribution2"
+            objectClass="org.eclipse.pmf.pim.DataForm">
+         <menu
+               id="org.eclipse.pmf.ui.tools.menu"
+               label="PMF">
+            <separator
+                  name="main">
+            </separator>
+         </menu>
+         <action
+               class="org.eclipse.pmf.emf.ui.popup.actions.ImportDataForm"
+               id="org.eclipse.pmf.ui.tools.action3"
+               label="Import DataForm"
+               menubarPath="org.eclipse.pmf.ui.tools.menu/main">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>

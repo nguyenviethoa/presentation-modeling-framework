@@ -1,0 +1,31 @@
+	Boolean isDataTrigger = false; 
+	if (parameter.getCondition() instanceof org.eclipse.pmf.pim.interactive.PredicateTerm){
+		org.eclipse.pmf.pim.interactive.PredicateTerm terms = (org.eclipse.pmf.pim.interactive.PredicateTerm) parameter.getCondition();
+		
+		// determine the trigger is multi or single
+		int countUIPredicate = 0;
+		int countDataPredicate = 0;
+		if (!terms.getTerms().isEmpty() && terms.getTerms().size() > 1){
+			for (org.eclipse.pmf.pim.interactive.Predicate predicate : terms.getTerms()){
+				if (predicate instanceof org.eclipse.pmf.pim.interactive.UIPredicate)
+					countUIPredicate++;
+				if (predicate instanceof org.eclipse.pmf.pim.interactive.DataPredicate)
+					countDataPredicate++;	
+			}
+		}
+		
+		if (countDataPredicate > 0 && countUIPredicate == 0){
+			isDataTrigger = true;
+		}
+	}
+	else {
+		if (parameter.getCondition() instanceof org.eclipse.pmf.pim.interactive.DataPredicate){
+			isDataTrigger = true;
+		}
+	}
+	
+	ctx.setValue("isDataTrigger", isDataTrigger);
+	
+	return isDataTrigger;
+	
+	

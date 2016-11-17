@@ -1,0 +1,2 @@
+	
+	<GridData horizontalSpan="<%=gridData.getHorizontalSpan()%>" horizontalAlignment = "<%=gridData.getHorizontalAlignment()%>" grabExcessHorizontalSpace="<%=gridData.isGrabExcessHorizontalSpace()%>"/>

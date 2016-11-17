@@ -1,0 +1,30 @@
+<%
+	DataItem dataItem = (DataItem) ctx.getValue("container");
+	//variable = dataItem.getControl();
+	
+	if ((Boolean)ctx.getValue("foreground") == null){
+		ctx.setValue("foreground", false);
+	}
+	if ((Boolean)ctx.getValue("background") == null){
+		ctx.setValue("background", false);
+	}
+	if ((Boolean)ctx.getValue("foreground") != true){
+	   int rb = parameter.getRed();
+	   int gb = parameter.getGreen();
+	   int bb = parameter.getBlue();
+	   String hexFore = String.format("#%02x%02x%02x", rb, gb, bb);
+	   ctx.setValue("foreground",true);
+	%> foreground="<%=hexFore%>" 	
+	<%
+	}
+	else if ((Boolean)ctx.getValue("background") != true){
+	   int rf = parameter.getRed();
+	   int gf = parameter.getGreen();
+	   int bf = parameter.getBlue();
+	   String hexBack = String.format("#%02x%02x%02x", rf, gf, bf);
+	   ctx.setValue("background", true);
+	   %> background="<%=hexBack%>" 	
+	<%	
+	}
+
+%>

@@ -1,0 +1,25 @@
+<%
+   gridLayout = null;
+  
+     
+   if (layout==null) 	{
+        	%>	
+			    <GridLayout numColumns="2" makeColumnsEqualWidth="true"/>
+		    <%
+		}
+
+ else if (layout instanceof org.eclipse.pmf.pim.ui.GridLayout) {
+
+            gridLayout = (org.eclipse.pmf.pim.ui.GridLayout) layout;
+            
+             InternalPatternContext inctx = (InternalPatternContext) ctx;
+            final Map<String, Object> parameters = new HashMap<String, Object>();
+			parameters.put("gridLayout", this.gridLayout);
+			ExecutionContext ctx_local = new ExecutionContext(inctx);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_lV4EwMX-EeWkTpPI_sPo4w",
+					ctx_local, parameters);							
+     
+    }
+
+%>

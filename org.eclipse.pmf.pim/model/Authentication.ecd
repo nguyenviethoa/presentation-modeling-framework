@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="Authentication" size="1219,648" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#/" metadata="emf-1.0" initialized="true" tag="100" key="32303037303533312D313030206F72672E65636C697073652E706D662E70696D">
+  <children xsi:type="editmodel:ClassEditModel" name="Application" location="75,60" size="114,81" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Application" runTimeClassModel=" importModel(resource: EResource)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="87,18">
+      <children xsi:type="editmodel:MethodEditModel" name="importModel" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Application/importModel">
+        <model href="pmf.ecore#//Application/importModel"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="authentication" location="0,40" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Application/authentication" multiplicityLabel="//@children.0/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="260,107" size="18,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="authentication" location="211,79" size="67,14" anchorKind="LastPart"/>
+        <model href="pmf.ecore#//Application/authentication"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="114,40" attachSource="true"/>
+    </sourceConnections>
+    <model href="pmf.ecore#//Application"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Authentication" location="285,60" size="192,93" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Authentification" runTimeClassModel="anonymous,showLostPassword,registration">
+    <children xsi:type="editmodel:CompartmentEditModel" size="169,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="anonymous" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Authentification/anounymous">
+        <model href="pmf.ecore#//Authentication/anonymous"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="registration" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Authentification/registration">
+        <model href="pmf.ecore#//Authentication/registration"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="showLostPassword" id="platform:/resource/org.eclipse.pmf.pim/model/pmf.ecore#//Authentification/showLostPassword">
+        <model href="pmf.ecore#//Authentication/showLostPassword"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="pmf.ecore#//Authentication"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="pmf.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1;Product=eEmf"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

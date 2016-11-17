@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildcore:Job xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_N-6g4PDpEeW4LI-rWk5VuA" name="pmf_master">
+  <properties xmi:id="_atZlsPDpEeW4LI-rWk5VuA" key="releaseName" value="mars"/>
+  <properties xmi:id="_atZlsvDpEeW4LI-rWk5VuA" key="eclipse.download.prefix" value="file:/home/data/httpd/download.eclipse.org"/>
+  <properties xmi:id="_atZlsfDpEeW4LI-rWk5VuA" key="updateSiteURL" value="${eclipse.download.prefix}/releases/${releaseName}"/>
+  <properties xmi:id="_atZls_DpEeW4LI-rWk5VuA" key="eclipse.staging.area" value="/shared/download-staging.priv/modeling/pmf/"/>
+  <properties xmi:id="_atZltPDpEeW4LI-rWk5VuA" key="git.branch" value="master"/>
+  <steps xsi:type="buildstep:CleanStep" xmi:id="_cwb0cPDpEeW4LI-rWk5VuA" type="Result"/>
+  <steps xsi:type="buildstep:CleanStep" xmi:id="_j0CFIPEMEeWI9ajqtqW5og"/>
+  <steps xsi:type="buildstep:InstallStep" xmi:id="_vfpa4PEQEeWI9ajqtqW5og" id="TP_build" profile="TP_build">
+    <updateSiteUrls>${updateSiteURL}</updateSiteUrls>
+    <productNames>org.eclipse.platform.ide</productNames>
+  </steps>
+  <steps xsi:type="buildstep:BuildStep" xmi:id="_imXtEPDpEeW4LI-rWk5VuA">
+    <buildLocations xsi:type="buildstep:UpdateSiteBuildLocation" xmi:id="_jMvwkPDpEeW4LI-rWk5VuA" url="${updateSiteURL}"/>
+    <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4crSAPDpEeW4LI-rWk5VuA" gitLocation="_oFZhkfDpEeW4LI-rWk5VuA"/>
+    <components xsi:type="buildstep:Feature" xmi:id="_kS9KsPDpEeW4LI-rWk5VuA" id="org.eclipse.pmf.feature"/>
+  </steps>
+  <scms xsi:type="buildscm:GIT" xmi:id="_oFZhkPDpEeW4LI-rWk5VuA">
+    <locations xmi:id="_oFZhkfDpEeW4LI-rWk5VuA" protocol="https://" url="git.eclipse.org/r/pmf/org.eclipse.pmf" localPath="git_eclipse" branch="${git.branch}" username="" password=""/>
+  </scms>
+  <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_rVn8MPDpEeW4LI-rWk5VuA" userDeployServerUrl="https://hudson.eclipse.org/hudson">
+    <users xmi:id="_rVn8M_DpEeW4LI-rWk5VuA" login="tguiu" permission="WRITE"/>
+    <generationLocation xsi:type="buildscm:GITGenerationLocation" xmi:id="_rVn8NPDpEeW4LI-rWk5VuA" folderName="org.eclipse.pmf.build/jobs" gitLocation="_oFZhkfDpEeW4LI-rWk5VuA"/>
+  </deployment>
+</buildcore:Job>

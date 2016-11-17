@@ -1,0 +1,28 @@
+<%
+   // prepare for the updateSourceTrigger
+	String updateSourceTrigger = "PropertyChanged";
+	if (dataItem.getDataBinding() != null && dataItem.getDataBinding().getUpdateSourceTrigger() != null && 
+	dataItem.getDataBinding().getUpdateSourceTrigger() != ""){
+		updateSourceTrigger = dataItem.getDataBinding().getUpdateSourceTrigger();
+	}
+%>	
+
+>
+
+<<%=nameString%>:RichTextEditor.text>
+			<Binding path="<%=path%>" 
+			<% if (updateSourceTrigger != null) { %>
+    			updateSourceTrigger="<%=updateSourceTrigger%>" >
+   			 <%}%>
+    	</Binding>
+		</<%=nameString%>:RichTextEditor.text>
+		<<%=nameString%>:RichTextEditor.layout>
+				<GridLayout numColumns="1"/>
+			</<%=nameString%>:RichTextEditor.layout>
+		<<%=nameString%>:RichTextEditor.layoutData>
+				<GridData horizontalAlignment="GridData.FILL" 
+					  verticalAlignment="GridData.FILL" grabExcessHorizontalSpace="true" 
+					  grabExcessVerticalSpace="false"/>
+		</<%=nameString%>:RichTextEditor.layoutData>
+ </<%=nameString%>:RichTextEditor>
+ 

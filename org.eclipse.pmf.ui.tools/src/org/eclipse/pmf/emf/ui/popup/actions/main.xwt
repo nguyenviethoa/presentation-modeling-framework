@@ -1,0 +1,168 @@
+<Shell xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt"
+	xmlns:j="clr-namespace:org.eclipse.pmf.emf.ui.popup.actions" text="DataForm Insertation"
+	size="500, 400"
+	x:Class="org.eclipse.pmf.emf.ui.popup.actions.DataFormListHandler">
+	<Shell.layout>
+		<GridLayout />
+	</Shell.layout>
+
+	<SashForm x:Name="main" x:style="BORDER" Weights="30, 70">
+		<Composite>
+			<Composite.layout>
+				<GridLayout numColumns="1" />
+			</Composite.layout>
+			<Label x:Name="labelDatatypes" text="Super Data Types: ">
+				<Label.layoutData>
+					<GridData horizontalAlignment="LEFT" verticalAlignment="TOP"/>
+				</Label.layoutData>
+			</Label>
+			<ListViewer x:Name="datatypes" x:style="SINGLE|BORDER|V_SCROLL|H_SCROLL"
+				input="{Binding}">
+				<ListViewer.contentProvider>
+					<j:DataTypeContentProvider />
+				</ListViewer.contentProvider>
+				<ListViewer.labelProvider>
+					<j:DataTypeLabelProvider />
+				</ListViewer.labelProvider>
+				<ListViewer.control SelectionEvent="updateDataforms" />
+				<ListViewer.control.layoutData>
+					<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+						grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+				</ListViewer.control.layoutData>
+
+			</ListViewer>
+
+			<Composite.layoutData>
+				<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+					grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+			</Composite.layoutData>
+		</Composite>
+		<Composite x:Name="dataforms">
+			<Composite.layout>
+				<GridLayout numColumns="1" />
+			</Composite.layout>
+						
+			<Label x:Name="labelDataforms" text="DataForms: ">
+				<Label.layoutData>
+					<GridData horizontalAlignment="LEFT" verticalAlignment="TOP"/>
+				</Label.layoutData>
+			</Label>
+			<TreeViewer name="TreeViewerTest" x:Style="MULTI|FULL_SELECTION|BORDER"
+				sseHashlookup="true" input="{Binding}">
+				<TreeViewer.contentProvider>
+					<j:DataFormContentProvider>
+					</j:DataFormContentProvider>
+				</TreeViewer.contentProvider>
+				<TreeViewer.labelProvider>
+					<j:DataFormLabelProvider>
+					</j:DataFormLabelProvider>
+				</TreeViewer.labelProvider>
+				<TreeViewer.control SelectionEvent="treeSelection" />
+				<TreeViewer.tree.layoutData>
+					<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+						grabExcessHorizontalSpace="true"
+						grabExcessVerticalSpace="true" />
+				</TreeViewer.tree.layoutData>
+			</TreeViewer>
+
+			<Composite.layoutData>
+				<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+					grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+			</Composite.layoutData>
+			
+			<Button x:Name="Insert" x:Style="PUSH" text="Insert"
+					SelectionEvent="insert">
+					<Button.layoutData>
+						<GridData horizontalAlignment="Center" verticalAlignment="FILL"
+							grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+					</Button.layoutData>
+				</Button>
+			<Label x:Name="labelInsertedContent" text="Inserted Content: ">
+				<Label.layoutData>
+					<GridData horizontalAlignment="LEFT" verticalAlignment="TOP"/>
+				</Label.layoutData>
+			</Label>
+			
+			<Composite x:Name="insertedContent">
+				<Composite.layout>
+					<GridLayout numColumns="2" />
+				</Composite.layout>
+				<Composite.layoutData>
+				<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+					grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+				</Composite.layoutData>
+				
+				<ListViewer x:Name="content" x:style="SINGLE|BORDER|V_SCROLL|H_SCROLL"
+				>
+				<ListViewer.contentProvider>
+					<j:DataFieldContentProvider />
+				</ListViewer.contentProvider>
+				<ListViewer.labelProvider>
+					<j:DataFieldLabelProvider />
+				</ListViewer.labelProvider>
+				
+				<ListViewer.control.layoutData>
+					<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+						grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalSpan="3"/>
+				</ListViewer.control.layoutData>
+				</ListViewer>
+				
+				<Button x:Name="Up" x:Style="PUSH" text="  Up  "
+					SelectionEvent="up">
+					<Button.layoutData>
+						<GridData horizontalAlignment="RIGHT" verticalAlignment="FILL" 
+							grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+					</Button.layoutData>
+					</Button>
+					<Button x:Name="Down" x:Style="PUSH" text=" Down "
+						SelectionEvent="down">
+						<Button.layoutData>
+							<GridData horizontalAlignment="RIGHT" verticalAlignment="FILL" 
+								grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+						</Button.layoutData>
+					</Button>
+					<Button x:Name="Delete" x:Style="PUSH" text="Delete"
+						SelectionEvent="delete">
+						<Button.layoutData>
+							<GridData horizontalAlignment="RIGHT" verticalAlignment="FILL" 
+								grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+						</Button.layoutData>
+					</Button>
+				
+				
+			
+			</Composite>
+			
+			<Composite x:Name="buttons">
+				<Composite.layout>
+					<GridLayout numColumns="2" />
+				</Composite.layout>
+				<Composite.layoutData>
+				<GridData horizontalAlignment="RIGHT" verticalAlignment="BOTTOM"
+					grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+				</Composite.layoutData>
+				<Button x:Name="Cancel" x:Style="PUSH" text="Cancel"
+					SelectionEvent="cancel">
+					<Button.layoutData>
+						<GridData horizontalAlignment="RIGHT" verticalAlignment="BOTTOM"
+							grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+					</Button.layoutData>
+				</Button>
+				<Button x:Name="Save" x:Style="PUSH" text="Save"
+					SelectionEvent="save">
+					<Button.layoutData>
+						<GridData horizontalAlignment="RIGHT" verticalAlignment="BOTTOM"
+							grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+					</Button.layoutData>
+				</Button>
+				
+			</Composite>	
+		</Composite>
+		<SashForm.layoutData>
+			<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+				grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+		</SashForm.layoutData>
+
+	</SashForm>
+
+</Shell>

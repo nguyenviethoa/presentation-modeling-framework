@@ -1,0 +1,13 @@
+<% if (variable != null){
+		
+// if the widget contains triggers
+	if (variable.getTriggers() != null && !variable.getTriggers().isEmpty()){
+	
+		if (variable.eClass().getName().equals("Selector")){	 %>
+   			<ComboViewer.Triggers>
+		<% }else{ %>
+			<<%=variable.eClass().getName()%>.Triggers>
+<%}
+    }
+	} 
+%>

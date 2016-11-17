@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2005 IBM Corporation and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   IBM - Initial API and implementation
+ *
+ * </copyright>
+ *
+ * $Id$
+ */
+-->
+<plugin>
+
+     <extension point="org.eclipse.ui.editorActions"> 
+      <editorContribution 
+         id="org.eclipse.pmf.validation.editorContribution" 
+         targetID="org.eclipse.pmf.pim.presentation.PMFEditorID"> 
+         <menu
+               label="%_UI_ValidationMenu_label"
+               path="org.eclipse.pmf.pimMenuID/additions"
+               id="org.eclipse.pmf.validationMenuID">
+            <separator name="additions"/>
+         </menu>
+         <action
+               label="%ValidateElementsAction.label"
+               icon="$nl$/icons/elcl16/validate_co.gif"
+               class="org.eclipse.pmf.validation.actions.BatchValidationDelegate"
+               menubarPath="org.eclipse.pmf.pimMenuID/org.eclipse.pmf.validationMenuID/additions"
+               id="org.eclipse.pmf.validation.ui.validateAction"/>
+         <action
+               label="%EnableLiveValidationAction.label"
+               class="org.eclipse.pmf.validation.actions.EnableLiveValidationDelegate"
+               menubarPath="org.eclipse.pmf.pimMenuID/org.eclipse.pmf.validationMenuID/additions"
+               id="org.eclipse.pmf.validation.ui.enableLiveValidationAction"/>
+        <action
+              label="%ShowValidationEventsAction.label"
+              class="org.eclipse.pmf.validation.actions.ShowValidationEventsDelegate"
+              style="toggle"
+              state="false"
+              menubarPath="org.eclipse.pmf.pimMenuID/org.eclipse.pmf.validationMenuID/additions"
+              id="org.eclipse.pmf.validation.ui.showValidationEventsAction"/>               
+      </editorContribution> 
+   </extension> 
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            targetID="org.eclipse.pmf.pim.presentation.PMFEditorID"
+            id="org.eclipse.pmf.validation.viewerContribution">
+         <menu
+               label="%_UI_ValidationMenu_label"
+               path="additions"
+               id="org.eclipse.pmf.validationMenuID">
+            <separator name="additions"/>
+         </menu>
+         <action
+               label="%ValidateElementsAction.label"
+               icon="$nl$/icons/elcl16/validate_co.gif"
+               class="org.eclipse.pmf.validation.actions.BatchValidationDelegate"
+               menubarPath="org.eclipse.pmf.validationMenuID/additions"
+               id="org.eclipse.pmf.validation.ui.validateAction"/>
+         <action
+               label="%EnableLiveValidationAction.label"
+               class="org.eclipse.pmf.validation.actions.EnableLiveValidationDelegate"
+               menubarPath="org.eclipse.pmf.validationMenuID/additions"
+               id="org.eclipse.pmf.validation.ui.enableLiveValidationAction"/>
+        <action
+              label="%ShowValidationEventsAction.label"
+              class="org.eclipse.pmf.validation.actions.ShowValidationEventsDelegate"
+              style="toggle"
+              state="false"
+              menubarPath="org.eclipse.pmf.validationMenuID/additions"
+              id="org.eclipse.pmf.validation.ui.showValidationEventsAction"/>               
+      </viewerContribution>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            name="%PMFConstraintsCategory"
+            id="org.eclipse.pmf.validation.ui.library"/>
+      <constraintProvider
+            cache="true"
+            >
+         <package namespaceUri="http://www.eclipse.org/pmf"/>
+         <constraints categories="org.eclipse.pmf.validation.ui.library">
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.NonEmptyNamesConstraint"
+                  severity="ERROR"
+                  mode="Live"
+                  name="%NonEmptyNameConstraint"
+                  id="org.eclipse.pmf.validation.ui.NameNotEmpty"
+                  statusCode="1">
+               <description>
+                  %NonEmptyNameConstraint.description
+               </description>
+               <message>
+                  %NonEmptyNameConstraint.message
+               </message>
+               <target class="PMFObject">
+                  <event name="Set">
+                     <feature name="name"/>
+                  </event>
+                  <event name="Unset">
+                     <feature name="name"/>
+                  </event>
+               </target>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.NoCircularReference"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%NoCircularReferenceConstraint"
+                  id="org.eclipse.pmf.validation.ui.NoCircular"
+                  statusCode="1">
+               <description>
+                  %NoCircularReferenceConstraint.description
+               </description>
+               <message>
+                  %NoCircularReferenceConstraint.message
+               </message>
+               <target class="Application"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.NameConflictConstraint"
+                  severity="ERROR"
+                  mode="Live"
+                  name="%NoNameConflictConstraint"
+                  id="org.eclipse.pmf.validation.ui.NoNameConflictConstraint"
+                  statusCode="1">
+               <description>
+                  %NoNameConflictConstraint.description
+               </description>
+               <message>
+                  %NoNameConflictConstraint.message
+               </message>
+               <target class="DataForm">
+               	<event name="Set">
+                     <feature name="name"/>
+                  </event>
+                  <event name="Unset">
+                     <feature name="name"/>
+                 </event>
+               </target>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.TypeMismatchConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%TypeMismatchConstraint"
+                  id="org.eclipse.pmf.validation.ui.TypeMismatchConstraint"
+                  statusCode="1">
+               <description>
+                  %TypeMismatchConstraint.description
+               </description>
+               <message>
+                  %TypeMismatchConstraint.message
+               </message>
+               <target class="DataElement"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.EveryMultiplicityConformsConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%EveryMultiplicityConformsConstraint"
+                  id="org.eclipse.pmf.validation.ui.EveryMultiplicityConformsConstraint"
+                  statusCode="1">
+               <description>
+                  %EveryMultiplicityConformsConstraint.description
+               </description>
+               <message>
+                  %EveryMultiplicityConformsConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.KeyUniqueConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%KeyUniqueConstraint"
+                  id="org.eclipse.pmf.validation.ui.KeyUniqueConstraint"
+                  statusCode="1">
+               <description>
+                  %KeyUniqueConstraint.description
+               </description>
+               <message>
+                  %KeyUniqueConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.MapEntryUniqueConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%MapEntryUniqueConstraint"
+                  id="org.eclipse.pmf.validation.ui.MapEntryUniqueConstraint"
+                  statusCode="1">
+               <description>
+                  %MapEntryUniqueConstraint.description
+               </description>
+               <message>
+                  %MapEntryUniqueConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.ProxyResolvesConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%ProxyResolvesConstraint"
+                  id="org.eclipse.pmf.validation.ui.ProxyResolvesConstraint"
+                  statusCode="1">
+               <description>
+                  %ProxyResolvesConstraint.description
+               </description>
+               <message>
+                  %ProxyResolvesConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.ReferenceIsContainedConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%ReferenceIsContainedConstraint"
+                  id="org.eclipse.pmf.validation.ui.ReferenceIsContainedConstraint"
+                  statusCode="1">
+               <description>
+                  %ReferenceIsContainedConstraint.description
+               </description>
+               <message>
+                  %ReferenceIsContainedConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.UniqueIDConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%UniqueIDConstraint"
+                  id="org.eclipse.pmf.validation.ui.UniqueIDConstraint"
+                  statusCode="1">
+               <description>
+                  %UniqueIDConstraint.description
+               </description>
+               <message>
+                  %UniqueIDConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.EveryBidirectionalReferenceIsPairedConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%EveryBidirectionalReferenceIsPairedConstraint"
+                  id="org.eclipse.pmf.validation.ui.EveryBidirectionalReferenceIsPairedConstraint"
+                  statusCode="1">
+               <description>
+                  %EveryBidirectionalReferenceIsPairedConstraint.description
+               </description>
+               <message>
+                  %EveryBidirectionalReferenceIsPairedConstraint.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.pmf.validation.constraints.NoCircularContainmentConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="%NoCircularContainment"
+                  id="org.eclipse.pmf.validation.ui.NoCircularContainment"
+                  statusCode="1">
+               <description>
+                  %NoCircularContainment.description
+               </description>
+               <message>
+                  %NoCircularContainment.message
+               </message>
+               <target class="DataForm"/>
+               <target class="DataField"/>
+               <target class="DataElement"/>
+               <target class="DataInheritance"/>
+               <target class="DataReference"/>
+               <target class="DataItem"/>
+               <target class="DataCollection"/>
+               <target class="DataComposite"/>
+            </constraint>
+            <constraint
+                  class="org.eclipse.pmf.validation.constraints.DataFormUniqueName"
+                  id="org.eclipse.pmf.validation.ui.UniqueDataFormNameConstraint"
+                  lang="Java"
+                  mode="Live"
+                  name="%UniqueDataFormNameConstraint"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  %UniqueDataFormNameConstraint.message
+               </message>
+               <description>
+                  %UniqueDataFormNameConstraint.description
+               </description>
+               <target
+                     class="DataForm">
+                  <event
+                        name="Set">
+                     <feature
+                           name="name">
+                     </feature>
+                  </event>
+                  <event
+                        name="Unset">
+                     <feature
+                           name="name">
+                     </feature>
+                  </event>
+               </target>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="false"
+            id="org.eclipse.pmf.validation.ui.libraryContext">
+         <selector class="org.eclipse.pmf.validation.constraints.ValidationDelegateClientSelector"/>
+      </clientContext>
+      <binding
+            context="org.eclipse.pmf.validation.ui.libraryContext"
+            category="org.eclipse.pmf.validation.ui.library"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.validationListeners">
+      <listener class="org.eclipse.pmf.validation.listeners.ValidationListener">
+         <clientContext id="org.eclipse.pmf.validation.ui.libraryContext"/>
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
+      <clientContext id="org.eclipse.pmf.validation.ui.libraryContext"/>
+   </extension> 
+</plugin>

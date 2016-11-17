@@ -1,0 +1,8 @@
+<% 			
+			List<DataProperty> columns = parameter.getColumns();
+			InternalPatternContext iCtx = (InternalPatternContext) ctx;
+			if (variable instanceof org.eclipse.pmf.pim.DataForm ){
+				org.eclipse.pmf.pim.DataForm dataForm = (org.eclipse.pmf.pim.DataForm) variable;
+				EGFHelper.dataFieldInTableOrchestration(iCtx, dataForm, columns);
+			}	
+%>

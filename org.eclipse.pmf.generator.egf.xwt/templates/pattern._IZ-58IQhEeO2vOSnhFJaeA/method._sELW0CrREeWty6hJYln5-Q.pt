@@ -1,0 +1,19 @@
+
+	<% 	
+		Node.Container node = ( (InternalPatternContext) ctx).getNode();
+		List<Node> updateNodes = new ArrayList();
+		for (Node n: node.getChildren()){
+			if (n.getPatternClass() !=null 
+			    && (n.getPatternClass().equals("application.views.xwt.ConditionTrigger") 
+			    || n.getPatternClass().equals("application.views.xwt.UITrigger")
+			    || n.getPatternClass().equals("application.views.xwt.EventTrigger"))){
+				updateNodes.add(n);
+			}
+		}
+		node.getChildren().removeAll(updateNodes);
+		node.getChildren().addAll(updateNodes);
+		
+		// from here, only triggers related patterns could be called by callback
+		ctx.setValue("generatedUIAttributes", false);
+		ctx.setValue("generatedTriggers", true); 
+	%>

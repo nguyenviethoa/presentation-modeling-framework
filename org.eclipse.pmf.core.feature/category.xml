@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.pmf.core.feature_0.4.0.jar" id="org.eclipse.pmf.core.feature" version="0.4.0">
+      <category name="PMF - Presentation Modeling Framework"/>
+   </feature>
+   <feature url="features/org.eclipse.pmf.xwt.feature_0.4.0.jar" id="org.eclipse.pmf.xwt.feature" version="0.4.0">
+      <category name="PMF - Presentation Modeling Framework"/>
+   </feature>
+   <category-def name="PMF - Presentation Modeling Framework" label="Presentation Modeling Framework"/>
+</site>

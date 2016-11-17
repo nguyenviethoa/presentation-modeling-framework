@@ -1,0 +1,58 @@
+<%  
+	if (parameter.getText() == null) {parameter.setText("");}
+	dataItem = (DataItem) ctx.getValue("container");
+	if (dataItem.getLabel() != null) {
+		if (parameter == dataItem.getLabel()) {
+			label = parameter;
+		}
+	}	
+	if (dataItem.getHelp() != null) {
+		if (parameter == dataItem.getHelp()) {
+			help = parameter;
+		}
+	}
+	
+	//add " * " as suffix to Labels of mandatory fields.
+	if (dataItem.isMandatory()){
+		parameter.setText(parameter.getText()+" *");
+	}
+	
+	
+	String labelText = parameter.getText();
+	String labelTextToDisplay = null;
+
+	  labelText = labelText.substring(0, 1).toUpperCase() + labelText.substring(1).replaceAll("(?!^)([A-Z])", " $1");
+		
+	 //Delete "_" and replace them by space
+	  labelText=labelText.replaceAll("_"," ");
+	  
+	  //Make first letter of each Attribute's word in Uppercase
+	  StringBuffer stringbf = new StringBuffer();
+      Matcher m = Pattern.compile("([a-z])([a-z]*)",
+      Pattern.CASE_INSENSITIVE).matcher(labelText);
+      while (m.find()) {
+         m.appendReplacement(stringbf, 
+         m.group(1).toUpperCase() + m.group(2).toLowerCase());
+      }
+      
+    labelTextToDisplay =  m.appendTail(stringbf).toString();
+            
+            labelTextToDisplay = Normalizer.normalize(labelTextToDisplay, Normalizer.Form.NFD);
+            labelTextToDisplay = labelTextToDisplay.replaceAll("[^\\p{ASCII}]", "");
+            labelTextToDisplay = labelTextToDisplay.replaceAll("\\p{M}", "");
+      
+      //Make first letter of each Attribute's word in Uppercase
+	  StringBuffer stbf = new StringBuffer();
+      Matcher m1 = Pattern.compile("([a-z])([a-z]*)",
+      Pattern.CASE_INSENSITIVE).matcher(labelTextToDisplay);
+      while (m1.find()) {
+         m1.appendReplacement(stbf, 
+         m1.group(1).toUpperCase() + m1.group(2).toLowerCase());
+      }
+      labelTextToDisplay =  m1.appendTail(stbf).toString();
+   
+%>
+		<Label text="<%=labelTextToDisplay%>"
+	
+	
+						

@@ -1,0 +1,29 @@
+<%	
+	Boolean isMultiTrigger = (Boolean) ctx.getValue("isMultiTrigger");
+	if (!isMultiTrigger)  {
+%>
+
+<%
+
+if (parameter.getValue() != null) {
+
+%>
+
+Value="<%=parameter.getValue()%>" 
+
+<% } %>
+
+<%
+
+if (parameter.getOperator() != null) {
+
+%>
+
+Operator="<%=parameter.getOperator()%>" 
+
+<% } 
+
+}else if (isMultiTrigger) {	%>
+	/>
+<%}%>	
+	

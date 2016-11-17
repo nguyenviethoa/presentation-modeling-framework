@@ -1,0 +1,11 @@
+<%
+	InternalPatternContext itemCtx = (InternalPatternContext) ctx;
+	Node.Container container = (Node.Container) itemCtx.getNode().getParent().getParent();
+	
+	// in case of dataform contains some triggers
+	if (abstractTrigger.eContainer() instanceof org.eclipse.pmf.pim.DataForm){
+		Node.Container flagNode = new Node.Container(itemCtx.getNode(), "flagDataForm");
+	}
+	
+	container.getChildren().add(itemCtx.getNode());
+%>

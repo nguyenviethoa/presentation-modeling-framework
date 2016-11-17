@@ -1,0 +1,75 @@
+<% 
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE); 
+String wizardName = parameter.getName();
+String className = wizardName+"Wizard";
+ctx.setValue("pageHandlerClass", className);
+
+%>
+ /******************************************************************************* 
+ * Copyright (c) 2006, 2016 Soyatec (http://www.soyatec.com) and others. 
+ * All rights reserved. This program and the accompanying materials 
+ * are made available under the terms of the Eclipse Public License v1.0 
+ * which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html 
+ * 
+ * Contributors: 
+ * Soyatec - initial API and implementation 
+ *******************************************************************************/ 
+ 
+package <%=_package%>;
+
+import java.net.URL;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.ui.INewWizard;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.xwt.databinding.BindingContext;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
+import org.eclipse.xwt.emf.EMFBinding;
+
+import model.*;
+
+/**
+ * @author El-Amine Ouraiba (amine.ouraiba@soyatec.com)
+
+ */
+ 
+public class <%=className%>  extends Wizard implements INewWizard {
+
+	private IWorkbench workbench;
+	private IStructuredSelection selection;
+ <%
+    for(WizardPage page : parameter.getWizardPages()){
+ %>
+	  public <%=page.getName()%>WizardPage  <%=page.getName()%> ;
+	  private  <%=page.getDataContextType().getName()%> <%=page.getDataContextType().getName()%>_dataContext = ModelFactory.eINSTANCE.create<%=page.getDataContextType().getName()%>();   
+	 <%
+	  }
+	  %>
+	      
+	public <%=className%> () {
+		super();
+		setNeedsProgressMonitor(true);  
+        EMFBinding.initialze();
+        //add here relationships between pages's dataContexts
+        
+	}
+
+	public String getWindowTitle() {
+	    return "<%=parameter.getDataType().getName()%> Wizard";
+	  }	 
+
+	public void init(IWorkbench workbench, IStructuredSelection selection) {
+		this.workbench = workbench ;
+		this.selection = selection;
+	}
+
+
+
+
+

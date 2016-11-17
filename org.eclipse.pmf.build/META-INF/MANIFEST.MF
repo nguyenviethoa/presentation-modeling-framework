@@ -1,0 +1,15 @@
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.pmf.build;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-Activator: org.eclipse.pmf.build.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.egf.common,
+ org.eclipse.egf.model,
+ org.eclipse.egf.pattern,
+ org.eclipse.egf.portfolio.eclipse.build
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

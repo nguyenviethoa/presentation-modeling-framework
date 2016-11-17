@@ -1,0 +1,28 @@
+	
+	<%
+		
+	    String groupText = dataGroup.getName();
+	    	    
+		    groupText = Normalizer.normalize(groupText, Normalizer.Form.NFD);
+            groupText = groupText.replaceAll("[^\\p{ASCII}]", "");
+            groupText = groupText.replaceAll("\\p{M}", "");
+            
+      //Make first letter of each Attribute's word in Uppercase
+	  StringBuffer stringbf = new StringBuffer();
+      Matcher m = Pattern.compile("([a-z])([a-z]*)",
+      Pattern.CASE_INSENSITIVE).matcher(groupText);
+      while (m.find()) {
+         m.appendReplacement(stringbf, 
+         m.group(1).toUpperCase() + m.group(2).toLowerCase());
+      }
+      
+   String groupTextToDisplay =  m.appendTail(stringbf).toString();
+	%>
+ 	
+	
+	<Group text="<%=groupTextToDisplay%>">
+	
+		
+		
+		
+	

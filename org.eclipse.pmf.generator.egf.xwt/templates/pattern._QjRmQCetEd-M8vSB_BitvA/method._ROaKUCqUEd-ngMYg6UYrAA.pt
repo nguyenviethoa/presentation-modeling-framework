@@ -1,0 +1,58 @@
+<%
+String modelPackage = (String)ctx.getValue("model.package.name");
+ctx.setValue(Constants.NAMESPACES, new HashMap<String, String>());
+// Reset validator here, and this moved from CollectValidator, because the namespce map would be reset here.
+@SuppressWarnings("unchecked")
+Map<String, String> validators = (Map<String, String>) ctx
+		.getValue(Constants.VALIDATORS);
+Set<Entry<String, String>> entrySet = validators.entrySet();
+Map<String, String> validatorElements = new HashMap<String, String>();
+for (Entry<String, String> entry : entrySet) {
+	validatorElements.put(entry.getKey(),
+			XWTHelper.getXWTElementName(ctx, entry.getValue()));
+}
+ctx.setValue(Constants.VALIDATOR_NAMESPACE, validatorElements);
+@SuppressWarnings("unchecked")
+Set<String> views = (Set<String>)ctx.getValue(Constants.VIEW_WITH_VALIDATOR);
+boolean addValidation = views.contains(parameter.getDataContextType().getName()+parameter.getName().replaceAll("\\s+",""));
+// start the content scope
+ctx.setValue(Constants.DATAFORM_CONTENT, "true");
+
+%>
+<%
+	final StringBuffer beginBuffer = new StringBuffer();
+	beginBuffer.append("<Composite \n	xmlns=\"http://www.eclipse.org/xwt/presentation\"\n");
+	beginBuffer.append("	xmlns:x=\"http://www.eclipse.org/xwt\"\n");
+	InternalPatternContext iCtx = (InternalPatternContext) ctx;
+	new Node.DataLeaf(iCtx.getNode(), getClass(), "namespace", beginBuffer.toString());
+%>
+	
+    x:Class="<%=modelPackage%>.<%=parameter.getDataContextType().getName()+parameter.getName().replaceAll("\\s+","")%>View"
+    x:name="<%=parameter.getName().replaceAll("\\s+","")%>"
+    >
+    
+	<Composite.layout>
+		<GridLayout numColumns="2" makeColumnsEqualWidth="false"/>
+	</Composite.layout>
+	
+<%
+if (addValidation) {
+%>
+    <Composite.Resources>
+		<BindingContext x:Key="myDBC" />
+	</Composite.Resources>
+    
+	<Label text="{Binding source={StaticResource myDBC}, path=status}">
+	 	<Label.layoutData>
+			<GridData horizontalIndent="10" horizontalSpan="2" grabExcessHorizontalSpace="true" horizontalAlignment="GridData.FILL"/>
+		</Label.layoutData>
+	</Label>
+
+
+<%
+}
+%>
+    
+	
+	
+	

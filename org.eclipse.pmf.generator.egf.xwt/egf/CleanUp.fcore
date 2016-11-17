@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ftask:Task xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_YFISwIfHEeOuItHb7z8FvA" name="CleanUp" kind="java" implementation="org.eclipse.pmf.generator.egf.xwt.CleanUpTask">
+  <contractContainer xmi:id="_ZZ7igIfHEeOuItHb7z8FvA">
+    <contracts xmi:id="_Zw5RAIfHEeOuItHb7z8FvA" name="projectName" mandatory="true">
+      <type xmi:type="types:TypeString" xmi:id="_fyQ9kIfHEeOuItHb7z8FvA" value="testpersonproject"/>
+    </contracts>
+  </contractContainer>
+</ftask:Task>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+# *****************************************************************************
+# Copyright (c) 2006, 2016 Soyatec (http://www.soyatec.com) and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+# 
+# Contributors:
+#     Soyatec - initial API and implementation
+#******************************************************************************
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.pmf.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.presentation.PMFModelWizardID"
+            name="%_UI_PMFApplicationWizard_label"
+            class="org.eclipse.pmf.pim.presentation.PMFApplicationWizard"
+            category="org.eclipse.pmf.Wizard.category.ID"
+            icon="icons/full/obj16/PMFModelFile.gif">
+         <description>%_UI_PMFApplicationWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+      <wizard
+            id="org.eclipse.pmf.pim.presentation.PMFModelWizardID"
+            name="%_UI_PMFLibraryWizard_label"
+            class="org.eclipse.pmf.pim.presentation.PMFLibraryWizard"
+            category="org.eclipse.pmf.Wizard.category.ID"
+            icon="icons/full/obj16/PMFModelFile.gif">
+         <description>%_UI_PMFLibraryWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+      <wizard
+            id="org.eclipse.pmf.pim.presentation.PMFModelWizardID"
+            name="%_UI_PMFCodeGenContextWizard_label"
+            class="org.eclipse.pmf.pim.presentation.PMFCodeGenContextWizard"
+            category="org.eclipse.pmf.Wizard.category.ID"
+            icon="icons/full/obj16/PMFModelFile.gif">
+         <description>%_UI_PMFCodeGenContextWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.presentation.PMFModelWizardID"
+            name="%_UI_PMFModelWizard_label"
+            class="org.eclipse.pmf.pim.presentation.PMFModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PMFModelFile.gif">
+         <description>%_UI_PMFModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pmf -->
+      <editor
+            id="org.eclipse.pmf.pim.databinding.presentation.DatabindingEditorID"
+            name="%_UI_DatabindingEditor_label"
+            icon="icons/full/obj16/DatabindingModelFile.gif"
+            extensions="databinding"
+            class="org.eclipse.pmf.pim.databinding.presentation.DatabindingEditor"
+            contributorClass="org.eclipse.pmf.pim.databinding.presentation.DatabindingActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.transformation.presentation.TransformationModelWizardID"
+            name="%_UI_TransformationModelWizard_label"
+            class="org.eclipse.pmf.pim.transformation.presentation.TransformationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TransformationModelFile.gif">
+         <description>%_UI_TransformationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pmf -->
+      <editor
+            id="org.eclipse.pmf.pim.datainput.presentation.DatainputEditorID"
+            name="%_UI_DatainputEditor_label"
+            icon="icons/full/obj16/DatainputModelFile.gif"
+            extensions="datainput"
+            class="org.eclipse.pmf.pim.datainput.presentation.DatainputEditor"
+            contributorClass="org.eclipse.pmf.pim.datainput.presentation.DatainputActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.databinding.presentation.DatabindingModelWizardID"
+            name="%_UI_DatabindingModelWizard_label"
+            class="org.eclipse.pmf.pim.databinding.presentation.DatabindingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DatabindingModelFile.gif">
+         <description>%_UI_DatabindingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pmf -->
+      <editor
+            id="org.eclipse.pmf.pim.interactive.presentation.InteractiveEditorID"
+            name="%_UI_InteractiveEditor_label"
+            icon="icons/full/obj16/InteractiveModelFile.gif"
+            extensions="interactive"
+            class="org.eclipse.pmf.pim.interactive.presentation.InteractiveEditor"
+            contributorClass="org.eclipse.pmf.pim.interactive.presentation.InteractiveActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.datainput.presentation.DatainputModelWizardID"
+            name="%_UI_DatainputModelWizard_label"
+            class="org.eclipse.pmf.pim.datainput.presentation.DatainputModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DatainputModelFile.gif">
+         <description>%_UI_DatainputModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pmf -->
+      <editor
+            id="org.eclipse.pmf.pim.ui.presentation.UiEditorID"
+            name="%_UI_UiEditor_label"
+            icon="icons/full/obj16/UiModelFile.gif"
+            extensions="ui"
+            class="org.eclipse.pmf.pim.ui.presentation.UiEditor"
+            contributorClass="org.eclipse.pmf.pim.ui.presentation.UiActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.interactive.presentation.InteractiveModelWizardID"
+            name="%_UI_InteractiveModelWizard_label"
+            class="org.eclipse.pmf.pim.interactive.presentation.InteractiveModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/InteractiveModelFile.gif">
+         <description>%_UI_InteractiveModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pmf -->
+      <editor
+            id="org.eclipse.pmf.pim.data.presentation.DataEditorID"
+            name="%_UI_DataEditor_label"
+            icon="icons/full/obj16/DataModelFile.gif"
+            extensions="data"
+            class="org.eclipse.pmf.pim.data.presentation.DataEditor"
+            contributorClass="org.eclipse.pmf.pim.data.presentation.DataActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.ui.presentation.UiModelWizardID"
+            name="%_UI_UiModelWizard_label"
+            class="org.eclipse.pmf.pim.ui.presentation.UiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UiModelFile.gif">
+         <description>%_UI_UiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.eclipse.pmf.pim.presentation.PMFEditorID"
+            name="%_UI_PMFEditor_label"
+            icon="icons/full/obj16/PMFModelFile.gif"
+            extensions="pmf"
+            class="org.eclipse.pmf.pim.presentation.PMFXWTEditor"
+            contributorClass="org.eclipse.pmf.pim.presentation.PMFActionBarContributor">
+      </editor>
+      <editor
+            id="org.eclipse.pmf.pim.presentation.PMFEditorID"
+            name="%_UI_PMFEditor_label"
+            icon="icons/full/obj16/PMFModelFile.gif"
+            extensions="plb"
+            class="org.eclipse.pmf.pim.presentation.PMFXWTEditor"
+            contributorClass="org.eclipse.pmf.pim.presentation.PMFActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pmf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.eclipse.pmf.pim.data.presentation.DataModelWizardID"
+            name="%_UI_DataModelWizard_label"
+            class="org.eclipse.pmf.pim.data.presentation.DataModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DataModelFile.gif">
+         <description>%_UI_DataModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pmf -->
+      <editor
+            id="org.eclipse.pmf.pim.transformation.presentation.TransformationEditorID"
+            name="%_UI_TransformationEditor_label"
+            icon="icons/full/obj16/TransformationModelFile.gif"
+            extensions="transformation"
+            class="org.eclipse.pmf.pim.transformation.presentation.TransformationEditor"
+            contributorClass="org.eclipse.pmf.pim.transformation.presentation.TransformationActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

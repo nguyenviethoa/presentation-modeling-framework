@@ -1,0 +1,26 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" x:name="details" x:Class="org.eclipse.pmf.emf.ui.popup.actions.DataFormListHandler"
+	xmlns:j="clr-namespace:org.eclipse.pmf.emf.ui.popup.actions">
+	<Composite.layout>
+				<GridLayout numColumns="1" />
+			</Composite.layout>
+			<ListViewer x:Name="dataformListViewer" x:style="SINGLE|BORDER|V_SCROLL|H_SCROLL"
+				input="{Binding}">
+				<ListViewer.contentProvider>
+					<j:DataFormContentProvider />
+				</ListViewer.contentProvider>
+				<ListViewer.labelProvider>
+					<j:DataFormLabelProvider />
+				</ListViewer.labelProvider>
+				<ListViewer.control SelectionEvent="dataformSelection" />
+				<ListViewer.control.layoutData>
+					<GridData horizontalAlignment="FILL" verticalAlignment="FILL"
+						grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" />
+				</ListViewer.control.layoutData>
+				<ListViewer.control.menu>
+					<Menu x:style="POP_UP" x:Class="org.eclipse.pmf.emf.ui.popup.actions.MenuHandler">
+						<MenuItem text="Insert the dataform" x:style="PUSH" selectionEvent="updateInsert" />
+					</Menu>
+				</ListViewer.control.menu>
+		</ListViewer>
+</Composite>

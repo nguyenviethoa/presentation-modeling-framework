@@ -1,0 +1,5 @@
+>
+                        <Label.layoutData>
+							<GridData horizontalIndent="10" widthHint="300"/>
+						</Label.layoutData>
+</Label>

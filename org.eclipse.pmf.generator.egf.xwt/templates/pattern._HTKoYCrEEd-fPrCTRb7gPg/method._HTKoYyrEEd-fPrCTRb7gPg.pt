@@ -1,0 +1,2 @@
+//ctx.setValue(Constants.DATA_INPUT, parameter.getMain().getDataInput());
+variable = parameter;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.eclipse.pmf.ui.properties"
+            tabDescriptorProvider="org.eclipse.pmf.ui.properties.part.XWTTabDescriptorProvider">
+         <propertyCategory
+               category="basic"></propertyCategory>
+      </propertyContributor>
+   </extension>
+<!-- Add Advanced Tab-->
+ <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.eclipse.pmf.ui.properties">
+         <propertyTab
+               category="basic"
+               id="advancedTab"
+               label="Advanced">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.eclipse.pmf.ui.properties">
+         <propertySection
+               class="org.eclipse.pmf.ui.properties.part.ApplicationAdvancedPropertySection"
+               id="advancedSection"
+               tab="advancedTab">
+            <input
+                  type="org.eclipse.emf.ecore.EObject">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+</plugin>

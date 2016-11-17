@@ -1,0 +1,3 @@
+Boolean generatedUIAttributes = (Boolean) ctx.getValue("generatedUIAttributes");
+
+return generatedUIAttributes;

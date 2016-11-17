@@ -1,0 +1,39 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views" xmlns:o="clr-namespace:org.eclipse.pmf.pim.ui"
+	x:Class="org.eclipse.pmf.ui.properties.views.SashFromSashFromView"
+	x:name="SashFrom">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="orientation" x:name="orientation_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<ComboViewer singleSelection="{Binding path=orientation}"
+		input="{Binding source={x:Type o:Orientation}}" x:name="orientation">
+		<ComboViewer.contentProvider>
+			<ObservableListContentProvider />
+		</ComboViewer.contentProvider>
+		<ComboViewer.control.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</ComboViewer.control.layoutData>
+	</ComboViewer>
+	<Composite text="{x:Static m:Messages.PROPERTIES___SASHFROM_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:ContainerContainerView x:name="Container">
+			<j:ContainerContainerView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:ContainerContainerView.layoutData>
+		</j:ContainerContainerView>
+	</Composite>
+</Composite>

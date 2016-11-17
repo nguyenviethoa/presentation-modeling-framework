@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.pmf.releng"
+      label="PMF Releng Feature (Incubator)"
+      version="0.4.0.qualifier"
+      provider-name="%providerName"
+      license-feature="org.eclipse.license"
+      license-feature-version="0.0.0">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <url>
+      <update label="PMF Releng Feature" url="http://www.eclipse.org/downloads/download.php?format=xml&amp;file=/pmf/updates"/>
+   </url>
+
+   <includes
+         id="org.eclipse.pmf.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.pmf.xwt.feature"
+         version="0.0.0"/>
+
+</feature>

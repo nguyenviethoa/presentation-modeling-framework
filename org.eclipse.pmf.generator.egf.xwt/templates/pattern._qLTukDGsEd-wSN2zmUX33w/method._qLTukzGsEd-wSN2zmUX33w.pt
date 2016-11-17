@@ -1,0 +1,38 @@
+	ctx.setValue(Constants.VALIDATORS, new HashMap<String, String>());
+	ctx.setValue(Constants.IMAGES, new HashMap<String, String>());
+	ctx.setValue(Constants.VIEW_WITH_VALIDATOR, new HashSet<String>());
+	
+	@SuppressWarnings("unchecked")
+	Map<String, String> validators = (Map<String, String>)ctx.getValue(Constants.VALIDATORS);
+	org.eclipse.pmf.pim.transformation.CodeGenContext codegen = (org.eclipse.pmf.pim.transformation.CodeGenContext) ctx
+					.getValue("codegen.context");
+	EList<Library> libraries = parameter.getLibraries();
+	for (Library lib: libraries){
+		for (Validator val: lib.getValidators()){
+					if (codegen != null) {
+				String fullClassName = codegen.getValidator(val.getId());
+				if (fullClassName != null) {
+					validators.put(val.getId(), fullClassName);
+				}
+			}
+		}
+	}
+	
+    //create the system mandatory validator and assign it to application
+	org.eclipse.pmf.pim.Validator mandatoryValidator = org.eclipse.pmf.pim.PMFFactory.eINSTANCE.createValidator();
+	mandatoryValidator.setId(parameter.getName()+".validators.MandatoryValidator");
+	mandatoryValidator.setName("MandatoryValidator");
+	parameter.getValidators().add(mandatoryValidator);
+	
+   //resource resolver of mandatory validator
+	if (codegen != null) {
+				String mandatoryValidatorClassName = codegen.getValidator(mandatoryValidator.getId());
+				if (mandatoryValidatorClassName != null) {
+					validators.put(mandatoryValidator.getId(), mandatoryValidatorClassName);
+			       } 
+			      else { 
+			      	codegen.getValidatorMap().put(mandatoryValidator.getId(), mandatoryValidator.getId());
+			        validators.put(mandatoryValidator.getId(), mandatoryValidator.getId());
+					}
+          }
+	parameter.setMandatoryField(mandatoryValidator);

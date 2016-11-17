@@ -1,0 +1,5 @@
+<%
+	if (dataItem.getDataBinding() != null && dataItem.getDataBinding().getUpdateSourceTrigger() != null){
+	
+	} 
+%>

@@ -1,0 +1,23 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:r="clr-namespace:org.eclipse.epf.richtext.extension"
+	x:Class="org.eclipse.pmf.ui.properties.views.PMFObjectDocumentationTabContentView"
+	x:name="DocumentationTabContent">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<r:RichTextEditor x:name="description">
+		<r:RichTextEditor.text>
+			<Binding path="description" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</r:RichTextEditor.text>
+		<r:RichTextEditor.layout>
+			<GridLayout numColumns="1" />
+		</r:RichTextEditor.layout>
+		<r:RichTextEditor.layoutData>
+			<GridData horizontalAlignment="GridData.FILL"
+				verticalAlignment="GridData.FILL" grabExcessHorizontalSpace="true"
+				grabExcessVerticalSpace="false" />
+		</r:RichTextEditor.layoutData>
+	</r:RichTextEditor>
+</Composite>

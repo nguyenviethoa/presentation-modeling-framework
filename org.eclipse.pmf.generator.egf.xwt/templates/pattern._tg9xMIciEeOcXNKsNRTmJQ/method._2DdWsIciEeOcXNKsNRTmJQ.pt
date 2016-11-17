@@ -1,0 +1,21 @@
+<%
+		String fullyClassName = (String) ctx.getValue(Constants.STRINGS_EXTERNAL);
+		String packageName = null;
+		String className = null;
+		if (fullyClassName.indexOf(".") == -1) {
+			className = fullyClassName;
+			packageName = (String) ctx.getValue(Constants.MODEL_PACKAGE);
+		}else{
+			packageName = fullyClassName.substring(0, fullyClassName.lastIndexOf("."));
+			className = fullyClassName.substring(fullyClassName.lastIndexOf(".") + 1);
+		}
+		String bundleName = packageName + "." + className.toLowerCase();
+		String project = (String) ctx.getValue(Constants.GENERATED_PROJECT);
+		IPath path = new Path(project).append(Constants.DEFAULT_SOURCE_FOLDER);
+		String[] paths = bundleName.split("\\.");
+		for (String segment : paths){
+			path = path.append(segment);
+		}
+		path = path.addFileExtension("properties");
+		ctx.setValue(Constants.TARGET_FILE, path);
+%>

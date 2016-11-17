@@ -1,0 +1,13 @@
+Map<String, String> images = (Map<String, String>)ctx.getValue(Constants.IMAGES);
+org.eclipse.pmf.pim.transformation.CodeGenContext codegen = (org.eclipse.pmf.pim.transformation.CodeGenContext) ctx
+				.getValue("codegen.context");
+		if (codegen != null) {
+			String fullClassName = codegen.getImage(parameter.getId());
+			if (fullClassName != null) {
+//				int index = fullClassName.lastIndexOf(".");
+//				String className = fullClassName.substring(index + 1);
+//				String[] nsPair = XWTHelper.addNamespace(ctx, fullClassName);
+//				String NSclassName = nsPair[1] + ":" + className;
+				images.put(parameter.getId(), fullClassName);
+			}
+		}

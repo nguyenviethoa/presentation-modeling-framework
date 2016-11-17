@@ -1,0 +1,32 @@
+<% 
+String wizardPageName = parameter.getName();
+String className = wizardPageName+"WizardPage";
+Wizard wizard = (Wizard) parameter.eContainer();
+%>
+
+@Override
+	protected URL getContentURL() {
+				
+		URL url = <%=className%>.class.getResource("<%=parameter.getDataContextType().getName()%><%=parameter.getDataContextType().getName()%>View.xwt");
+				
+		return url;
+	}
+	
+
+	public boolean canFlipToNextPage() {
+		 return isPageComplete() && getNextPage() != null;
+	}	
+	
+<%
+    WizardPage lastPage = (WizardPage) wizard.getWizardPages().get(wizard.getWizardPages().size()-1);
+	if (!(parameter.getName().equals(lastPage.getName()))) {
+		WizardPage nextPage = (WizardPage) wizard.getWizardPages().get(wizard.getWizardPages().indexOf(parameter)+1);
+ %>
+	
+    public XWTWizardPage getNextPage(){
+		return ((<%=wizard.getName()%>Wizard)getWizard()).<%=nextPage.getName()%>;
+	}
+		
+	<%
+	  }
+    %>

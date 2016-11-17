@@ -1,0 +1,4 @@
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true" horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>

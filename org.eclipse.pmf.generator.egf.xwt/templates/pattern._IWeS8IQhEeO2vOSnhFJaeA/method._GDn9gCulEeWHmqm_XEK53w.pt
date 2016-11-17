@@ -1,0 +1,18 @@
+<%	
+	org.eclipse.pmf.pim.ui.UIElement variable = ((org.eclipse.pmf.pim.DataItem) ctx.getValue("container")).getControl();
+	if (variable !=null){
+	if (parameter.getImage() != null){
+	InternalPatternContext iCtx = (InternalPatternContext) ctx;
+	final Map<String, Object> parameters = new HashMap<String, Object>();
+	this.imag = parameter.getImage();
+	parameters.put("parameter", this.imag);
+	ExecutionContext ctx_local = new ExecutionContext(iCtx);
+	CallHelper
+			.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_I1Y2oI2wEeOb_-3RaaTytA",
+					ctx_local, parameters);
+	}
+	}
+%>
+
+>

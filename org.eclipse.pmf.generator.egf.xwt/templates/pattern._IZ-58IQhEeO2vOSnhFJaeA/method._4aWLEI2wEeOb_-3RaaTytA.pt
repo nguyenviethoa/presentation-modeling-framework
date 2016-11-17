@@ -1,0 +1,27 @@
+<%
+if (variable != null){
+ if (variable.getName() != null) {
+	   uiName = variable.getName();
+	   
+	   
+   }
+}   
+if (label != null) {
+	   		if ((label.getName() == null) || (label.getName() == "")) {
+	   			uiName = dataItem.getName() + "_label";
+	   		}
+	   		else {
+	   			uiName = label.getName();
+	   		}
+	   }		
+if (help != null) {
+	   		if ((help.getName() == null) || (help.getName() == "")) {
+	   			uiName = dataItem.getName() + "_help";
+	   		}
+	   		else {
+	   			uiName = help.getName();
+	   		}
+}
+	   		
+%>
+   	   x:name="<%=uiName%>"

@@ -1,0 +1,30 @@
+
+<%
+if (!parameter.isChangeable()){return;}
+String feature = DataBindingUtil.getPath(parameter.getDataBinding());
+String typeName = feature;
+		if (typeName != null && typeName.length() > 0) {
+				typeName = Character.toUpperCase(typeName.charAt(0))
+						+ typeName.substring(1);
+			}
+if (typeName != null){
+%>
+<%if (parameter.isAddNew()){%>
+public void add<%=typeName%>(Object sender, org.eclipse.swt.widgets.Event event){
+	performAddEvent("<%=feature%>");
+}
+<%}%>
+<%if (parameter.isRemovable()){%>
+public void remove<%=typeName%>(Object sender, org.eclipse.swt.widgets.Event event){
+	performRemoveEvent("<%=feature%>");
+}
+<%}%>
+<%if (parameter.isReorderable()){%>
+public void moveUp<%=typeName%>(Object sender, org.eclipse.swt.widgets.Event event){
+	performMoveUpEvent("<%=feature%>");
+}
+
+public void moveDown<%=typeName%>(Object sender, org.eclipse.swt.widgets.Event event){
+	performMoveDownEvent("<%=feature%>");
+}<%}%>
+<%}%>

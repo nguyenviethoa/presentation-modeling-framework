@@ -1,0 +1,7 @@
+		if (ctx.getValue(Constants.STRINGS_EXTERNAL) == null) {
+			return false;
+		}
+		@SuppressWarnings("unchecked")
+		Map<String, String> newStrings = (Map<String, String>) ctx
+				.getValue(Constants.STRINGS_EXTERNAL_MAP);
+		return newStrings != null && !newStrings.isEmpty();

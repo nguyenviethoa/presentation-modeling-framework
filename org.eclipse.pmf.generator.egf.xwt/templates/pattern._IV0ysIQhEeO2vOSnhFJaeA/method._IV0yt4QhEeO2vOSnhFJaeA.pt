@@ -1,0 +1,59 @@
+	<%
+    EList<Validator> dataFieldValidators = ((org.eclipse.pmf.pim.DataItem) ctx.getValue("container")).getDataBinding().getValidators();
+	// prepare for the updateSourceTrigger
+	String updateSourceTrigger = "PropertyChanged";
+	if (dataItem.getDataBinding() != null && dataItem.getDataBinding().getUpdateSourceTrigger() != null && 
+	dataItem.getDataBinding().getUpdateSourceTrigger() != ""){
+		updateSourceTrigger = dataItem.getDataBinding().getUpdateSourceTrigger();
+	}
+	
+	if (dataFieldValidators != null && !dataFieldValidators.isEmpty())
+	{
+    %>
+	<Text.Resources>
+	    <BindingContext x:Key="myDBC"/>
+    </Text.Resources>
+    <%}%>
+		
+	<Text.text>
+	<Binding  
+    <%
+	if (dataFieldValidators != null && !dataFieldValidators.isEmpty())
+	{%>
+	bindingContext="{StaticResource myDBC}" 
+    <%}%>
+	path="<%=path%>" 
+	
+	<% if (updateSourceTrigger != null) { %>
+    	updateSourceTrigger="<%=updateSourceTrigger%>" >
+    <%}%>
+    	
+	<%
+	if (dataFieldValidators != null && !dataFieldValidators.isEmpty())
+	{%>
+	<Binding.validationRules>
+	<%
+      Map<String, String> allvalidators = (Map<String, String>) ctx.getValue(Constants.VALIDATORS);
+	for (Validator v : dataFieldValidators)
+	{
+		String validatorPath = allvalidators.get(v.getId());
+		if (null == validatorPath)
+			validatorPath = v.getId();
+		String[] ns = XWTHelper.addNamespace(ctx, validatorPath);
+		String validatorName = validatorPath.substring(ns[0].length() + 1, validatorPath.length());
+		%><<%=ns[1]%>:<%=validatorName%>/><%
+	}%>
+	</Binding.validationRules>
+	<%}%>
+	</Binding>
+	</Text.text>
+		<Text.layoutData>
+			<GridData grabExcessHorizontalSpace="true" horizontalAlignment="GridData.FILL" />
+		</Text.layoutData>
+	</Text>
+	
+	
+	
+	
+	
+	

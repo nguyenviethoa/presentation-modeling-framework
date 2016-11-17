@@ -1,0 +1,48 @@
+
+<%
+		InternalPatternContext itemCtx = (InternalPatternContext) ctx;
+		Node.Container node = itemCtx.getNode(); 
+		
+if ( CounterHelper.getCounter (ctx) == 0) {
+			String dataType = parameter.getResolvedTargetContextType().getName();
+			if (parameter.getResolvedTargetContextType().isEnum())
+			{
+				final Map<String, Object> parameters = new HashMap<String, Object>();
+				parameters.put("parameter", this.control);
+				ExecutionContext ctx_local = new ExecutionContext(itemCtx);
+				CallHelper
+	 					.executeWithParameterInjection(
+								"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_IXDhwIQhEeO2vOSnhFJaeA",
+								ctx_local, parameters);
+			} else if ("EBoolean".equals(dataType)) {
+				final Map<String, Object> parameters = new HashMap<String, Object>();
+				parameters.put("parameter", this.control);
+				ExecutionContext ctx_local = new ExecutionContext(itemCtx);
+				CallHelper
+						.executeWithParameterInjection(
+								"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_IWeS8IQhEeO2vOSnhFJaeA",
+								ctx_local, parameters);
+			} else if ("EDate".equals(dataType)){ 
+				final Map<String, Object> parameters = new HashMap<String, Object>();
+				parameters.put("parameter", this.control);
+				ExecutionContext ctx_local = new ExecutionContext(itemCtx);
+				CallHelper
+						.executeWithParameterInjection(
+								"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_MBvHIJpDEeOZh_2X3bIrOg",
+								ctx_local, parameters);
+		
+			} 			
+			else  {
+				final Map<String, Object> parameters = new HashMap<String, Object>();
+				parameters.put("parameter", this.control);
+				ExecutionContext ctx_local = new ExecutionContext(itemCtx);
+				CallHelper
+						.executeWithParameterInjection(
+								"platform:/plugin/org.eclipse.pmf.generator.egf.xwt/egf/PMFtoXWT.fcore#_IV0ysIQhEeO2vOSnhFJaeA",
+								ctx_local, parameters);
+			}
+}%>
+
+
+			
+	

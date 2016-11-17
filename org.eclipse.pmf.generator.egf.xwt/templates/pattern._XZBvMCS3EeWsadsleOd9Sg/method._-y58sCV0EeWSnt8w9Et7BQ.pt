@@ -1,0 +1,30 @@
+<%  
+	abstractTrigger = (Trigger) parameter;
+	Boolean isMultiTrigger = false; 
+	if (parameter.getCondition() instanceof org.eclipse.pmf.pim.interactive.PredicateTerm){
+		org.eclipse.pmf.pim.interactive.PredicateTerm terms = (org.eclipse.pmf.pim.interactive.PredicateTerm) parameter.getCondition();
+		
+		// determine the data trigger is multi or single
+		int countDataTrigger = 0;
+		if (!terms.getTerms().isEmpty() && terms.getTerms().size() > 1){
+			for (org.eclipse.pmf.pim.interactive.Predicate predicate : terms.getTerms()){
+				if (predicate instanceof org.eclipse.pmf.pim.interactive.DataPredicate)
+					countDataTrigger++;
+			}
+			if (countDataTrigger > 1)
+				isMultiTrigger = true;
+		}
+	}
+	ctx.setValue("isMultiTrigger", isMultiTrigger);
+%>
+
+<% if (!isMultiTrigger) { %>
+
+	<DataTrigger 
+	
+
+<%} else{%>
+	<MultiDataTrigger>
+        <MultiDataTrigger.Conditions>
+
+<%}%>	

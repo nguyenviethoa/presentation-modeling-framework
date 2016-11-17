@@ -1,0 +1,32 @@
+</Composite>
+<%
+// start the content scope
+ctx.setValue(Constants.DATAFORM_CONTENT, null);
+// Update namespaces
+Node.Container node = ( (InternalPatternContext) ctx).getNode();
+List<Node> children = node.getChildren();
+Node.DataLeaf namespaceNode = null;
+for (Node child : children) {
+	if (child instanceof Node.DataLeaf && "namespace".equals(((Node.DataLeaf)child).getMethod())){
+		namespaceNode = (Node.DataLeaf) child;
+		break;
+	}
+}
+if (namespaceNode != null){
+	StringBuffer resultBuf = new StringBuffer(namespaceNode.getData());
+	Map<String, String> namespaces = (Map<String, String>) ctx.getValue(Constants.NAMESPACES);
+	Set<Entry<String, String>> entrySet = namespaces.entrySet();
+	for (Entry<String, String> entry : entrySet) {
+		StringBuffer insertBuffer = new StringBuffer();
+		insertBuffer.append("	xmlns:");
+		insertBuffer.append(entry.getValue());
+		insertBuffer.append("=\"clr-namespace:");
+		insertBuffer.append(entry.getKey());
+		insertBuffer.append("\"");
+		resultBuf.append(insertBuffer.toString());
+		resultBuf.append("\n");
+	}
+	namespaceNode.setData(resultBuf.toString());
+}
+%>
+

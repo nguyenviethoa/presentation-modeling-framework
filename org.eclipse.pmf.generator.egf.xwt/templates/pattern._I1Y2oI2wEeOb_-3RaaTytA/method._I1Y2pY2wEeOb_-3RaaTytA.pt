@@ -1,0 +1,11 @@
+<%
+	Map<String, String> allImages = (Map<String, String>)ctx.getValue(Constants.IMAGES);
+	if (allImages != null && !allImages.isEmpty()) {
+		
+	%>
+	 image="<%=allImages.get(parameter.getId())%>"
+	<%
+	}
+%> 
+ 	
+

@@ -1,0 +1,24 @@
+<%
+	String dataForm = parameter.getDataForm().getName();
+	String dataType = parameter.getDataForm().getDataContextType().getName();
+	
+	String groupText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, parameter, parameter.getName());
+	String modelPackage = (String)ctx.getValue("model.package.name");
+	String nsPrefix = XWTHelper.addNamespace(ctx, modelPackage + ".*")[1];
+	ctx.setValue("container", parameter);
+%>
+ 	<Group text="<%=groupText%>">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true"/>
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1"/>
+		</Group.layout>
+
+	<<%=nsPrefix%>:<%=dataType+dataForm%>View dataContext="{Binding path=<%=DataBindingUtil.getPath(parameter.getDataBinding())%>}">
+		<<%=nsPrefix%>:<%=dataType+dataForm%>View.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment = "FILL" grabExcessHorizontalSpace="true"/>
+		</<%=nsPrefix%>:<%=dataType+dataForm%>View.layoutData>
+	</<%=nsPrefix%>:<%=dataType+dataForm%>View>
+</Group>
+

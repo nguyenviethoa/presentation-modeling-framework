@@ -1,0 +1,13 @@
+<%
+Application app = (Application) ctx.getValue(Constants.APPLICATION);
+DataType resolvedTargetContextType = parameter.getResolvedTargetContextType();
+DataFormFolder dataFormFolder = app.getDataFormFolders().get(resolvedTargetContextType);
+if (dataFormFolder != null){
+	variable = dataFormFolder.getDefaultDataForm();
+	if (variable == null && !dataFormFolder.getDataForms().isEmpty()) {
+				variable = dataFormFolder.getDataForms().get(0);
+	}
+}
+
+ctx.setValue("container", parameter);
+%>

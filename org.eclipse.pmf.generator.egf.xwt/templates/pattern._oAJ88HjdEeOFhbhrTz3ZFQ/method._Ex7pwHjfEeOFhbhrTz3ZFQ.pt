@@ -1,0 +1,10 @@
+<%
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE);
+String project = (String)ctx.getValue(Constants.GENERATED_PROJECT);
+IPath path = new Path(project).append(Constants.DEFAULT_SOURCE_FOLDER);
+String[] paths = _package.split("\\.");
+for (String segment : paths)
+	path = path.append(segment);
+path = path.append("AbstractView").addFileExtension("java");
+ctx.setValue(Constants.TARGET_FILE, path);
+%>

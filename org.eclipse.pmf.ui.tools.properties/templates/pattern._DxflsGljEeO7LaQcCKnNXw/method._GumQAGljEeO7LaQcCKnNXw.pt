@@ -1,0 +1,4 @@
+<%
+String projectId = parameter.getName();
+ctx.setValue(Constants.TARGET_FILE, new Path(projectId).append("/plugin.xml"));  
+%>

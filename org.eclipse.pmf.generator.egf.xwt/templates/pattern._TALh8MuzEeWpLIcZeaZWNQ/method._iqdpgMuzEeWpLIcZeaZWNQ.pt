@@ -1,0 +1,15 @@
+<%
+String _package = (String)ctx.getValue(Constants.VIEW_PACKAGE);
+String project = (String)ctx.getValue(Constants.GENERATED_PROJECT);
+
+org.eclipse.core.runtime.IPath path = new org.eclipse.core.runtime.Path(project).append(Constants.DEFAULT_SOURCE_FOLDER);
+String[] paths = _package.split("\\.");
+
+for (String segment : paths)
+	path = path.append(segment);
+
+path = path.append(parameter.getName()+"WizardPage").addFileExtension("java");
+ctx.setValue(Constants.TARGET_FILE, path);
+
+%>
+

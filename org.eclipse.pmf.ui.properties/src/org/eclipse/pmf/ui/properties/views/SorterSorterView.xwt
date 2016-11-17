@@ -1,0 +1,44 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:s="clr-namespace:org.eclipse.pmf.pim"
+	xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages" xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	x:Class="org.eclipse.pmf.ui.properties.views.SorterSorterView" x:name="Sorter">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Group text="{x:Static m:Messages.PROPERTIES___SORTER_PROPERTY}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataPropertyDataPropertyView
+			dataContext="{Binding path=property}">
+			<j:DataPropertyDataPropertyView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataPropertyDataPropertyView.layoutData>
+		</j:DataPropertyDataPropertyView>
+	</Group>
+	<Label text="property *" x:name="property_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Label text="direction" x:name="direction_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<ComboViewer singleSelection="{Binding path=direction}"
+		input="{Binding source={x:Type s:SortingDirection}}" x:name="direction">
+		<ComboViewer.contentProvider>
+			<ObservableListContentProvider />
+		</ComboViewer.contentProvider>
+		<ComboViewer.control.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</ComboViewer.control.layoutData>
+	</ComboViewer>
+</Composite>

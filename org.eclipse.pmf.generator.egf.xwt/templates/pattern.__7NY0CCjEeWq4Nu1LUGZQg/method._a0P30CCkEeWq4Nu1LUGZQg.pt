@@ -1,0 +1,70 @@
+<%
+   if (parameter.isTransactionEdition()){
+%>
+	protected void validate(Event event) {
+
+		// display a Dialog Message Box about all page's data fields validation
+		if (compositeValidate(this)) {
+			MessageDialog.openInformation(XWT.findShell(this),
+					"Data Fields Validation",
+					"All data fields values are validated with success ! ");
+		} else {
+			MessageDialog.openError(XWT.findShell(this),
+					"Data Fields Validation",
+					"Some data fields values are not validated." + "\n"
+							+ "They are colored by red ! ");
+		}
+	}
+
+	protected boolean compositeValidate(Composite currentComposite) {
+		boolean valid = true;
+		
+		// obtain default Binding Context of every child
+		for (Control element : currentComposite.getChildren()) {
+			if (element instanceof Composite) {
+				valid &= compositeValidate((Composite) element);
+			}
+			IBindingContext bdcElement = XWT.getBindingContext(element);
+			IStatus bdcElementValidationStatus = (IStatus) bdcElement.getStatus().getValue();
+			// initialize colors
+			if (element instanceof Label)
+				element.setForeground(new Color(this.getDisplay(), 0, 0, 0));
+			if (element instanceof Text)
+				element.setBackground(new Color(this.getDisplay(), 255, 255, 255));
+			if (!(bdcElementValidationStatus.isOK())) {
+				valid = false;
+				if (element instanceof Label)
+					element.setForeground(new Color(this.getDisplay(), 255, 0, 0));
+				if (element instanceof Text)
+					element.setBackground(new Color(this.getDisplay(), 255, 0, 0));
+			}
+
+			// obtain Static Resource Binding Context of every child
+			ResourceDictionary res = (ResourceDictionary) XWT.getResources(element);
+			if (res != null) {
+				for (Entry<String, Object> entry : res.entrySet()) {
+					if (entry.getValue() instanceof IBindingContext) {
+						BindingContext bdcSRElement = (BindingContext) entry
+								.getValue();
+						IStatus bdcSRElementValidationStatus = (IStatus) bdcSRElement.getStatus().getValue();
+						if (!(bdcSRElementValidationStatus.isOK())) {
+							valid = false;
+							if (element instanceof Label)
+								element.setForeground(new Color(this.getDisplay(), 255, 0, 0));
+							if (element instanceof Text)
+								element.setBackground(new Color(this.getDisplay(), 255, 0, 0));
+						}
+					}
+				}
+			}
+
+		}
+		return valid;
+	}
+ 
+<%
+}
+%>		 
+
+	
+	

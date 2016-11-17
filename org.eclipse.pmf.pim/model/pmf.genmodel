@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.pmf.pim/src" editDirectory="/org.eclipse.pmf.ui.edit/src"
+    editorDirectory="/org.eclipse.pmf.ui.editor/src" modelPluginID="org.eclipse.pmf.pim"
+    templateDirectory="org.eclipse.pmf.pim/templates" dynamicTemplates="true" redirection=""
+    modelName="Pmf" editPluginClass="org.eclipse.pmf.pim.provider.PmfEditPlugin" editorPluginClass="org.eclipse.pmf.pim.presentation.PmfEditorPlugin"
+    codeFormatting="true" testSuiteClass="org.eclipse.pmf.pim.tests.PmfAllTests" importerID="org.eclipse.emf.importer.ecore"
+    bundleManifest="false" complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.pmf.ui.edit"
+    editorPluginID="org.eclipse.pmf.ui.editor" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>pmf.ecore</foreignModel>
+  <genPackages prefix="PMF" basePackage="org.eclipse.pmf" disposableProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="pmf.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//SortingDirection">
+      <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//SortingDirection/Ascending"/>
+      <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//SortingDirection/Descending"/>
+    </genEnums>
+    <genClasses ecoreClass="pmf.ecore#//DataForm"/>
+    <genClasses ecoreClass="pmf.ecore#//ElementalDataForm">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//ElementalDataForm/validators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ElementalDataForm/localValidators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ElementalDataForm/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//ElementalDataForm/viewProfiles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ElementalDataForm/layout"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pmf.ecore#//CompositeDataForm">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//CompositeDataForm/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataFormSelector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataFormSelector/UIMode"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataField"/>
+    <genClasses image="false" ecoreClass="pmf.ecore#//DataElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataElement/dataContextType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataElement/dataBinding"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//DataElement/resolvedTargetContextType"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//DataElement/resolvedDataContextType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataElement/changeable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataElement/propertyChanged"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataElement/control"/>
+      <genOperations ecoreOperation="pmf.ecore#//DataElement/findBindingContextType"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataCollection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataCollection/addNew"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataCollection/removable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataCollection/reorderable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataCollection/editable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataCollection/columns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataCollection/sorters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataCollection/editor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataCollection/detail"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//Application">
+      <genFeatures children="true" createChild="true" propertyCategory="" propertyDescription=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//Application/main"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Application/dataModelManagers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Application/libraries"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allViewProfiles"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allSystemActions"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allCommands"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allConverters"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allValidators"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allTypes"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//Application/allImages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Application/authentication"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//Application/mandatoryField"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Application/wizards"/>
+      <genOperations ecoreOperation="pmf.ecore#//Application/importModel">
+        <genParameters ecoreParameter="pmf.ecore#//Application/importModel/resource"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pmf.ecore#//DataComposite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataComposite/items"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataGroup/layout"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//DataItem/mandatory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataItem/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataItem/help"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataItem/layoutData"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pmf.ecore#//DataReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataReference/dataForm"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataReference/dataType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pmf.ecore#//UIObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//UIObject/viewID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//UIObject/visible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//UIObject/enabled"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//UIObject/triggers"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//Command"/>
+    <genClasses ecoreClass="pmf.ecore#//Action"/>
+    <genClasses ecoreClass="pmf.ecore#//SystemAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//SystemAction/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//ApplicationAction"/>
+    <genClasses ecoreClass="pmf.ecore#//DataFormFolder">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//DataFormFolder/dataForms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataFormFolder/defaultDataForm"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//TypeToDataFormFolderEntryMap">
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference pmf.ecore#//TypeToDataFormFolderEntryMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//TypeToDataFormFolderEntryMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//PMF">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//PMF/modelManagerFactories"/>
+      <genOperations ecoreOperation="pmf.ecore#//PMF/getDataModelManager">
+        <genParameters ecoreParameter="pmf.ecore#//PMF/getDataModelManager/dataType"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pmf.ecore#//DataModelManagerFactory">
+      <genOperations ecoreOperation="pmf.ecore#//DataModelManagerFactory/createDataModelManager"/>
+      <genOperations ecoreOperation="pmf.ecore#//DataModelManagerFactory/isTargetFor">
+        <genParameters ecoreParameter="pmf.ecore#//DataModelManagerFactory/isTargetFor/dataType"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataConverter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataConverter/fromType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//DataConverter/toType"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//Validator"/>
+    <genClasses ecoreClass="pmf.ecore#//ViewProfile">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//ViewProfile/children"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pmf.ecore#//PMFObject">
+      <genFeatures createChild="false" propertyDescription="Application's name" ecoreFeature="ecore:EAttribute pmf.ecore#//PMFObject/name"/>
+      <genFeatures createChild="false" propertyCategory="Doc" propertyDescription="Description of the application"
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute pmf.ecore#//PMFObject/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//PMFObject/id"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//Sorter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//Sorter/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//Sorter/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//Sorter/comparator"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//DataInheritance"/>
+    <genClasses ecoreClass="pmf.ecore#//DataAssocication"/>
+    <genClasses ecoreClass="pmf.ecore#//Library">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/viewProfiles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/systemActions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/commands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/converters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/validators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/dataFormFolders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/images"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Library/events"/>
+      <genOperations ecoreOperation="pmf.ecore#//Library/getDataFormFolder">
+        <genParameters ecoreParameter="pmf.ecore#//Library/getDataFormFolder/dataType"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//RegexValidator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//RegexValidator/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//EClassToEventEntryMap">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//EClassToEventEntryMap/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//EClassToEventEntryMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//Authentication">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//Authentication/showLostPassword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//Authentication/registration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//Authentication/anonymous"/>
+    </genClasses>
+    <genClasses ecoreClass="pmf.ecore#//Wizard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//Wizard/wizardPages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pmf.ecore#//Wizard/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//Wizard/category"/>
+    </genClasses>
+    <nestedGenPackages prefix="Data" basePackage="org.eclipse.pmf.pim" disposableProviderFactory="true"
+        ecorePackage="pmf.ecore#//data">
+      <genClasses image="false" ecoreClass="pmf.ecore#//data/DataModelManager">
+        <genOperations ecoreOperation="pmf.ecore#//data/DataModelManager/isTargetFor">
+          <genParameters ecoreParameter="pmf.ecore#//data/DataModelManager/isTargetFor/type"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//data/DataModelManager/getDataModelType">
+          <genParameters ecoreParameter="pmf.ecore#//data/DataModelManager/getDataModelType/type"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//data/DataModelManager/loadFor">
+          <genParameters ecoreParameter="pmf.ecore#//data/DataModelManager/loadFor/view"/>
+          <genParameters ecoreParameter="pmf.ecore#//data/DataModelManager/loadFor/dataType"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pmf.ecore#//data/DataType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//data/DataType/manager"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/DataType/properties"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//data/DataType/abstract"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//data/DataType/primitive"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//data/DataType/superTypes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/DataType/typeParameters"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/DataType/genericSuperTypes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//data/DataType/enum"/>
+        <genOperations ecoreOperation="pmf.ecore#//data/DataType/getRuntimeName"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//data/DataProperty">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//data/DataProperty/mandatory"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//data/DataProperty/type"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//data/DataProperty/many"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/DataProperty/genericType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pmf.ecore#//data/Property"/>
+      <genClasses ecoreClass="pmf.ecore#//data/TypeParameter">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/TypeParameter/bounds"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//data/GenericType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//data/GenericType/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//data/GenericType/typeParameter"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/GenericType/typeArguments"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/GenericType/upperBound"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//data/GenericType/lowerBound"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Ui" basePackage="org.eclipse.pmf.pim" disposableProviderFactory="true"
+        ecorePackage="pmf.ecore#//ui">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//ui/Orientation">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/Orientation/horizontal"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/Orientation/vertical"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//ui/FontStyle">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/FontStyle/Normal"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/FontStyle/Italic"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/FontStyle/Bold"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//ui/DialogMessageType">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/DialogMessageType/infomation"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/DialogMessageType/error"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/DialogMessageType/warning"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/DialogMessageType/question"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//ui/HorizontalAlignmentGridData">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/HorizontalAlignmentGridData/FILL"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/HorizontalAlignmentGridData/CENTER"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/HorizontalAlignmentGridData/LEFT"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/HorizontalAlignmentGridData/RIGHT"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//ui/VerticalAlignmentGridData">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/VerticalAlignmentGridData/FILL"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/VerticalAlignmentGridData/BOTTOM"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/VerticalAlignmentGridData/TOP"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/VerticalAlignmentGridData/CENTER"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//ui/VerticalAlignmentGridData/END"/>
+      </genEnums>
+      <genClasses ecoreClass="pmf.ecore#//ui/Text">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Text/text"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Text/modify"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/StackPanel"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/Separator">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Separator/orientation"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Label">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Label/text"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//ui/Label/image"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Image"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/Window">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Window/title"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Window/open"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Window/close"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Button">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Button/text"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Button/selection"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//ui/Button/image"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Combo"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/GroupBox">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/GroupBox/title"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GroupBox/collapsible"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GroupBox/collapse"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GroupBox/expand"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/BooleanButton">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/BooleanButton/selected"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Selector">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Selector/selection"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pmf.ecore#//ui/Control"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/ListView"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/Finder"/>
+      <genClasses image="false" ecoreClass="pmf.ecore#//ui/UIElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/UIElement/foreground"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/UIElement/background"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/UIElement/font"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/UIElement/toolTip"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/MenuItem"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/Container">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/Container/children"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/ViewPart">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/ViewPart/dataInput"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//ui/ViewPart/dataForm"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/SashFrom">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/SashFrom/orientation"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/UIEvent"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/Color">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Color/Red"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Color/Blue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Color/Green"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Color/opacity"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Font">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Font/size"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Font/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Font/style"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Part"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/PropertiesPart">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/PropertiesPart/tabs"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//ui/PropertiesPart/dataType"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/PropertyTab">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//ui/PropertyTab/content"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Tab"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/TabSet"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/Table"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/RichText"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/DateTimePicker">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/DateTimePicker/dateOnly"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Hyperlink">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Hyperlink/url"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/Page">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/Page/transactionEdition"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//ui/Page/content"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/WizardPage">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//ui/WizardPage/bindingPath"/>
+        <genOperations ecoreOperation="pmf.ecore#//ui/WizardPage/getDataContextType"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/MessageDialog">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/MessageDialog/message"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/MessageDialog/messageType"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//ui/RadioButton">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/RadioButton/selected"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pmf.ecore#//ui/Layout"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/GridLayout">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridLayout/numColumns"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridLayout/makeColumnsEqualWidth"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridLayout/horizontalSpacing"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridLayout/verticalSpacing"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pmf.ecore#//ui/LayoutData"/>
+      <genClasses ecoreClass="pmf.ecore#//ui/GridData">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridData/horizontalSpan"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridData/verticalSpan"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridData/horizontalAlignment"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridData/verticalAlignment"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridData/grabExcessHorizontalSpace"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//ui/GridData/grabExcessVerticalSpace"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Interactive" basePackage="org.eclipse.pmf.pim" disposableProviderFactory="true"
+        ecorePackage="pmf.ecore#//interactive">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//interactive/Operator">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/EQ"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/NE"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/GT"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/LT"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/GE"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/LE"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/LIKE"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/IS_A"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//interactive/Operator/IS_KIND_OF"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="pmf.ecore#//interactive/Condition"/>
+      <genClasses ecoreClass="pmf.ecore#//interactive/TriggerAction"/>
+      <genClasses image="false" ecoreClass="pmf.ecore#//interactive/Predicate"/>
+      <genClasses ecoreClass="pmf.ecore#//interactive/DataPredicate">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//interactive/DataPredicate/binding"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/UIPredicate">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//interactive/UIPredicate/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//interactive/UIPredicate/property"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/ExpressionCondition">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//interactive/ExpressionCondition/expression"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//interactive/ExpressionCondition/language"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/SetAction">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//interactive/SetAction/value"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//interactive/SetAction/target"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//interactive/SetAction/property"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/Trigger">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//interactive/Trigger/actions"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/PredicateTerm">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//interactive/PredicateTerm/terms"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="pmf.ecore#//interactive/LogicPredicate">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//interactive/LogicPredicate/operator"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//interactive/LogicPredicate/value"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/ConditionTrigger">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//interactive/ConditionTrigger/condition"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/EventTrigger">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//interactive/EventTrigger/event"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//interactive/ClassHandlerAction"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Datainput" basePackage="org.eclipse.pmf.pim" disposableProviderFactory="true"
+        ecorePackage="pmf.ecore#//datainput">
+      <genClasses image="false" ecoreClass="pmf.ecore#//datainput/DataInput"/>
+      <genClasses ecoreClass="pmf.ecore#//datainput/SelectionInput"/>
+      <genClasses image="false" ecoreClass="pmf.ecore#//datainput/FileInput">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//datainput/FileInput/fileName"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Databinding" basePackage="org.eclipse.pmf.pim" disposableProviderFactory="true"
+        ecorePackage="pmf.ecore#//databinding">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//databinding/BindingMode">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//databinding/BindingMode/TwoWay"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//databinding/BindingMode/OneWay"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//databinding/BindingMode/OneTime"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="pmf.ecore#//databinding/UpdateSourceTrigger">
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//databinding/UpdateSourceTrigger/Default"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//databinding/UpdateSourceTrigger/PropertyChanged"/>
+        <genEnumLiterals ecoreEnumLiteral="pmf.ecore#//databinding/UpdateSourceTrigger/LostFocus"/>
+      </genEnums>
+      <genClasses ecoreClass="pmf.ecore#//databinding/DataBindingNode">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBindingNode/next"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//databinding/DataBindingLeaf">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBindingLeaf/aggregationNext"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//databinding/DataBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/path"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/converter"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/localConverter"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/validators"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/localValidators"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//databinding/DataBinding/mode"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//databinding/DataBinding/updateSourceTrigger"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBinding/status"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//databinding/DataBindingPath">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//databinding/DataBindingPath/feature"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Transformation" basePackage="org.eclipse.pmf.pim" disposableProviderFactory="true"
+        ecorePackage="pmf.ecore#//transformation">
+      <genClasses ecoreClass="pmf.ecore#//transformation/Context">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//transformation/Context/parent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pmf.ecore#//transformation/Context/name"/>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/Context/getPropertyValue">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/Context/getPropertyValue/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/Context/getAllPropertyNames"/>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/Context/hasProperty">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/Context/hasProperty/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/Context/removeProperty">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/Context/removeProperty/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/Context/setPropertyValue">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/Context/setPropertyValue/name"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/Context/createChild"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//transformation/ResourceResolver">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//transformation/ResourceResolver/validatorMap"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//transformation/ResourceResolver/dataConverterMap"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//transformation/ResourceResolver/commandMap"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//transformation/ResourceResolver/viewProfileMap"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//transformation/ResourceResolver/imageMap"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pmf.ecore#//transformation/ResourceResolver/systemActionMap"/>
+      </genClasses>
+      <genClasses ecoreClass="pmf.ecore#//transformation/CodeGenContext">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/resourceResolvers"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/allValidatorMap"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/allDataConverterMap"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/allCommandMap"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/allSystemActionMap"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/allViewProfileMap"/>
+        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference pmf.ecore#//transformation/CodeGenContext/allImageMap"/>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/CodeGenContext/getDataConverter">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/CodeGenContext/getDataConverter/key"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/CodeGenContext/getValidator">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/CodeGenContext/getValidator/key"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/CodeGenContext/getCommand">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/CodeGenContext/getCommand/key"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/CodeGenContext/getSystemAction">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/CodeGenContext/getSystemAction/key"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/CodeGenContext/getViewProfile">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/CodeGenContext/getViewProfile/key"/>
+        </genOperations>
+        <genOperations ecoreOperation="pmf.ecore#//transformation/CodeGenContext/getImage">
+          <genParameters ecoreParameter="pmf.ecore#//transformation/CodeGenContext/getImage/key"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,232 @@
+<Composite xmlns="http://www.eclipse.org/xwt/presentation"
+	xmlns:x="http://www.eclipse.org/xwt" xmlns:m="clr-namespace:org.eclipse.pmf.ui.properties.messages"
+	xmlns:j="clr-namespace:org.eclipse.pmf.ui.properties.views"
+	x:Class="org.eclipse.pmf.ui.properties.views.DataCollectionDataCollectionView"
+	x:name="DataCollection">
+	<Composite.layout>
+		<GridLayout numColumns="2" />
+	</Composite.layout>
+	<Label text="addNew" x:name="addNew_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="addNew">
+		<Button.selection>
+			<Binding path="addNew" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Label text="removable" x:name="removable_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="removable">
+		<Button.selection>
+			<Binding path="removable" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Label text="reorderable" x:name="reorderable_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="reorderable">
+		<Button.selection>
+			<Binding path="reorderable" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Label text="editable" x:name="editable_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Button x:Style="CHECK" x:name="editable">
+		<Button.selection>
+			<Binding path="editable" updateSourceTrigger="PropertyChanged">
+			</Binding>
+		</Button.selection>
+		<Button.layoutData>
+			<GridData grabExcessHorizontalSpace="true"
+				horizontalAlignment="GridData.FILL" />
+		</Button.layoutData>
+	</Button>
+	<Composite text="{x:Static m:Messages.PROPERTIES___DATACOLLECTION_COLUMNS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<TableViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="columnsViewer"
+			input="{Binding Path=columns}">
+			<TableViewer.columns>
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATAPROPERTY_MANDATORY}"
+					bindingPath="mandatory" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___DATAPROPERTY_MANY}"
+					bindingPath="many" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_NAME}"
+					bindingPath="name" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_DESCRIPTION}"
+					bindingPath="description" />
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___PMFOBJECT_ID}" bindingPath="id" />
+			</TableViewer.columns>
+			<TableViewer.table HeaderVisible="true" />
+			<TableViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</TableViewer.control.layoutData>
+		</TableViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addColumns"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeColumns"
+				enabled="{Binding ElementName=columnsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpColumns"
+				enabled="{Binding ElementName=columnsViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownColumns"
+				enabled="{Binding ElementName=columnsViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="columns" x:name="columns_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___DATACOLLECTION_SORTERS}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<TableViewer x:Style="SWT.BORDER|SWT.FULL_SELECTION" Name="sortersViewer"
+			input="{Binding Path=sorters}">
+			<TableViewer.columns>
+				<TableViewerColumn width="150"
+					text="{x:Static m:Messages.PROPERTIES___SORTER_DIRECTION}"
+					bindingPath="direction" />
+			</TableViewer.columns>
+			<TableViewer.table HeaderVisible="true" />
+			<TableViewer.control.layoutData>
+				<GridData verticalAlignment="FILL" horizontalAlignment="FILL"
+					grabExcessVerticalSpace="true" grabExcessHorizontalSpace="true"
+					heightHint="70" />
+			</TableViewer.control.layoutData>
+		</TableViewer>
+		<Composite x:style="SWT.NONE">
+			<Composite.layoutData>
+				<GridData horizontalAlignment="SWT.FILL" verticalAlignment="SWT.TOP"
+					grabExcessVerticalSpace="true"></GridData>
+			</Composite.layoutData>
+			<Composite.layout>
+				<RowLayout type="SWT.VERTICAL" pack="false"></RowLayout>
+			</Composite.layout>
+			<Button text="{x:Static m:Messages.COMMON_ADD}" x:style="SWT.PUSH"
+				selectionEvent="addSorters"></Button>
+			<Button text="{x:Static m:Messages.COMMON_REMOVE}" x:style="SWT.PUSH"
+				selectionEvent="removeSorters"
+				enabled="{Binding ElementName=sortersViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_UP}" x:style="SWT.PUSH"
+				selectionEvent="moveUpSorters"
+				enabled="{Binding ElementName=sortersViewer, path=singleSelection}"></Button>
+			<Button text="{x:Static m:Messages.COMMON_DOWN}" x:style="SWT.PUSH"
+				selectionEvent="moveDownSorters"
+				enabled="{Binding ElementName=sortersViewer, path=singleSelection}"></Button>
+		</Composite>
+	</Composite>
+	<Label text="sorters" x:name="sorters_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATACOLLECTION_EDITOR}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataFormDataFormView dataContext="{Binding path=editor}">
+			<j:DataFormDataFormView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataFormDataFormView.layoutData>
+		</j:DataFormDataFormView>
+	</Group>
+	<Label text="editor" x:name="editor_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Group text="{x:Static m:Messages.PROPERTIES___DATACOLLECTION_DETAIL}">
+		<Group.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Group.layoutData>
+		<Group.layout>
+			<GridLayout numColumns="1" />
+		</Group.layout>
+		<j:DataFormDataFormView dataContext="{Binding path=detail}">
+			<j:DataFormDataFormView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataFormDataFormView.layoutData>
+		</j:DataFormDataFormView>
+	</Group>
+	<Label text="detail" x:name="detail_label">
+		<Label.layoutData>
+			<GridData horizontalIndent="10" widthHint="100" />
+		</Label.layoutData>
+	</Label>
+	<Composite text="{x:Static m:Messages.PROPERTIES___DATACOLLECTION_}">
+		<Composite.layoutData>
+			<GridData horizontalSpan="2" horizontalAlignment="FILL"
+				grabExcessHorizontalSpace="true" />
+		</Composite.layoutData>
+		<Composite.layout>
+			<GridLayout numColumns="2" />
+		</Composite.layout>
+		<j:DataCompositeDataCompositeView
+			x:name="DataComposite">
+			<j:DataCompositeDataCompositeView.layoutData>
+				<GridData horizontalSpan="2" horizontalAlignment="FILL"
+					grabExcessHorizontalSpace="true" />
+			</j:DataCompositeDataCompositeView.layoutData>
+		</j:DataCompositeDataCompositeView>
+	</Composite>
+</Composite>

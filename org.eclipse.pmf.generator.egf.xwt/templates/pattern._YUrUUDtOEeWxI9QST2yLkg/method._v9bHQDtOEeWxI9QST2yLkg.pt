@@ -1,0 +1,22 @@
+<%
+	org.eclipse.pmf.pim.DataComposite variable = (org.eclipse.pmf.pim.DataComposite)ctx.getValue("container");
+	String groupText = org.eclipse.pmf.generator.egf.xwt.i18n.ExternalStringsUtil.externalize(ctx, variable, variable.getName());
+	
+%>
+
+<% if (variable.getControl() != null) {
+	
+	// if UI is GroupBox 
+	if (variable.getControl() instanceof org.eclipse.pmf.pim.ui.GroupBox) {%>
+		</Group>
+	<% 
+	// deal with other UI elements
+	}else {%>
+	  </Composite>
+	<% }
+	
+	// if no control specified
+	} else {%>
+		</Composite>	
+	<%}%>
+	
